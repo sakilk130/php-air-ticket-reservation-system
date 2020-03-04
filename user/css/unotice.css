@@ -1,0 +1,48 @@
+/*Navigation br*/
+#navbar {
+  background-color: #6c757d;
+}
+.container-fluid {
+  padding: 1% 10%;
+}
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+#notice-body {
+  padding: 0% 10%;
+}
+.login {
+  width: 100%;
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-t-65 {
+  padding-top: 20px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+.login-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+.login-form {
+  width: 100%;
+}

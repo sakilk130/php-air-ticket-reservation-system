@@ -1,0 +1,68 @@
+/*Navbar*/
+#navbar {
+  background-color: #6c757d;
+}
+.container-fluid {
+  padding: 1% 10%;
+}
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+/* */
+/* Search Area*/
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-t-65 {
+  padding-top: 40px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+/*     */
+
+.search {
+  margin-top: 20px;
+  width: 100%;
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.search-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+.search-form {
+  width: 100%;
+}
+/*Search*/
+#search-result {
+  padding: 0% 10%;
+}
+.search-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+.select-btn {
+  width: 60%;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.select-btn:hover {
+  background-color: #333333;
+}

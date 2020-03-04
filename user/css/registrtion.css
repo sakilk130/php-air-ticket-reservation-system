@@ -1,0 +1,73 @@
+.register {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  margin-left: 450px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-t-65 {
+  padding-top: 65px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+.register {
+  width: 500px;
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.register-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+.male-input {
+  font-size: 16px;
+  margin-left: 100px;
+}
+.female-input {
+  font-size: 16px;
+  margin-left: 20px;
+}
+.reister-form {
+  width: 100%;
+}
+.register-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.register-form-btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.register-form-btn:hover {
+  background-color: #333333;
+}

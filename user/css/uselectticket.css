@@ -1,0 +1,131 @@
+/*Navigation br*/
+#navbar {
+  background-color: #6c757d;
+}
+.container-fluid {
+  padding: 1% 10%;
+}
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+/*Seat Selection*/
+.seat {
+  margin: 5px 0;
+  color: black;
+}
+.seat-body {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #344753;
+  display: inline-block;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin-right: 10px;
+  cursor: pointer;
+  line-height: 35px;
+  text-align: center;
+}
+.seat-handle-left {
+  width: 5px;
+  height: 20px;
+  right: -4px;
+  bottom: -1px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left: none !important;
+  position: absolute;
+  border: 1px solid #344753;
+}
+.seat-handle-right {
+  width: 5px;
+  bottom: -1px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-right: none !important;
+  height: 20px;
+  left: -4px;
+  position: absolute;
+  border: 1px solid #344753;
+}
+
+/*Background Color And Padding*/
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-t-65 {
+  padding-top: 40px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+/*     */
+#seatselection {
+  padding: 1% 10%;
+}
+.selection {
+  width: 300px;
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.selection-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #555555;
+  line-height: 1.2;
+}
+/*Seat Details */
+.seatdetails-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+.seatdetails {
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-top: 0px;
+  width: 800px;
+  height: 520px;
+}
+.seatdetails-input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.seatdetails-table {
+  border: 2px solid rgb(180, 178, 178);
+  border-collapse: collapse;
+  text-align: center;
+}
+.seatdetails-form-btn {
+  width: 80%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 115px;
+  width: 460px;
+}
+.seatdetails-form-btn:hover {
+  background-color: #333333;
+}
+/*   */
+.red {
+  background-color: red;
+}

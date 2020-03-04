@@ -1,0 +1,123 @@
+/* Logo resize*/
+.airline-logo {
+  width: 5%;
+  height: 1%;
+}
+/*navigation bar color*/
+#nvbar {
+  background-color: #6c757d;
+}
+
+/* Pading Navbar*/
+.container-fluid {
+  padding: 1% 10%;
+}
+/*navigation bar brand font*/
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.top-sign-btn {
+  background-color: #4caf50;
+  color: white;
+  margin-top: 0px;
+  width: 70px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.top-sign-btn:hover {
+  background-color: #d8d3d3;
+}
+/*Background Image of Search Flight*/
+#background-image {
+  background-image: url("airline.jpg");
+  height: calc(100vh - 102px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/**/
+/*Search Flight*/
+.flight-search {
+  padding: 1% 10%;
+  /*margin-top: 80px;*/
+  color: #fff;
+}
+.search-input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.search-btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: #333333;
+}
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+}
+.flight2-search {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+/**/
+/*Search Result*/
+.search-table {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  color: #fff;
+}
+#search-result {
+  padding: 1% 10%;
+}
+.select-btn {
+  width: 60%;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.select-btn:hover {
+  background-color: #333333;
+}
+/**/
+.bookus {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+#why-us {
+  margin-top: 30px;
+  padding: 1% 10%;
+}
+.fa {
+  font-size: 3.5rem;
+  color: #b4b2b2;
+  margin-top: 50px;
+}
+.fa:hover {
+  color: #6c757d;
+}
+.text {
+  text-align: center;
+}

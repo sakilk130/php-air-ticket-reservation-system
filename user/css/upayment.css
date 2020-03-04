@@ -1,0 +1,90 @@
+/*Navigation br*/
+#navbar {
+  background-color: #6c757d;
+}
+.container-fluid {
+  padding: 1% 10%;
+}
+/*             */
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+/*Payment*/
+.p-l-55 {
+  padding-left: 55px;
+}
+.p-r-55 {
+  padding-right: 55px;
+}
+.p-t-65 {
+  padding-top: 65px;
+}
+.p-b-50 {
+  padding-bottom: 50px;
+}
+.payment-form-title {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+.bimage {
+  width: 35%;
+  border-radius: 5px;
+  margin: 10px 25%;
+  margin-left: 130px;
+}
+.payment-input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.payment-table {
+  border: 2px solid rgb(180, 178, 178);
+  border-collapse: collapse;
+  text-align: center;
+}
+.pay-table {
+  margin-left: 38px;
+}
+.payment-form {
+  width: 100%;
+}
+.payment-form-btn {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.payment-form-btn:hover {
+  background-color: #333333;
+}
+.payment {
+  margin-left: 450px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+  background: rgb(224, 224, 224);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.payment-input2 {
+  margin-left: 25px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
