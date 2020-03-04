@@ -18,12 +18,14 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
           <!-- Brand -->
-          <a class="navbar-brand" href="/index.html">Bangladesh Airlines</a>
+          <a class="navbar-brand" href="/Mid-Project/index.php"
+            >Bangladesh Airlines</a
+          >
 
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="udashboard.html">Home</a>
+              <a class="nav-link" href="udashboard.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -42,13 +44,13 @@
                   Hi,Someone
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="ubookflight.html">Booking</a>
-                  <a class="dropdown-item" href="unotice.html">Notice</a>
-                  <a class="dropdown-item" href="uchangepassword.html"
+                  <a class="dropdown-item" href="ubookflight.php">Booking</a>
+                  <a class="dropdown-item" href="unotice.php">Notice</a>
+                  <a class="dropdown-item" href="uchangepassword.php"
                     >Change Password</a
                   >
-                  <a class="dropdown-item" href="usettings.html">Settings</a>
-                  <a class="dropdown-item" href="Login.html">Logout</a>
+                  <a class="dropdown-item" href="usettings.php">Settings</a>
+                  <a class="dropdown-item" href="Login.php">Logout</a>
                 </div>
               </li>
             </ul>
@@ -62,7 +64,7 @@
           <section id="search-flight">
             <div class="container-fluid">
               <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-                <form action="usearchresult.html" class="login-form">
+                <form action="usearchresult.php" class="login-form">
                   <span class="login-form-title">Search Flight</span>
                   <br />
                   <span>From</span><br />
@@ -103,21 +105,21 @@
                   <div class="carousel-item active">
                     <img
                       class="d-block w-100 cimage"
-                      src="/image/airline.jpg"
+                      src="/Mid-Project/image/airline.jpg"
                       alt="First slide"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="d-block w-100 cimage"
-                      src="/image/airline2.jpg"
+                      src="/Mid-Project/image/airline2.jpg"
                       alt="Second slide"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="d-block w-100 cimage"
-                      src="/image/airline3.jpg"
+                      src="/Mid-Project/image/airline3.jpg"
                       alt="Third slide"
                     />
                   </div>

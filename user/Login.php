@@ -16,11 +16,15 @@
   </head>
 
   <body>
+    <?php
+    session_start();
+    ?>
   <?php
   $err_uname = '';
   $uname = '';
   $err_pass = '';
   $pass = '';
+  $wrong_pass="";
   if (isset($_POST['submit'])) 
   {
       if (empty($_POST['uname'])) 
@@ -39,12 +43,22 @@
       {
           $pass = $_POST['pass'];
       }
+      if($uname == "sakil" && $pass == "123")
+      {
+        $_SESSION["loggedinuser"]=$uname;
+				header("Location:udashboard.php");
+      }
+      elseif($uname == "superadmin" && $pass == "superadmin")
+      {
+        $_SESSION["loggedinuser"]=$uname;
+				header("Location:/Mid-Project/superadmin/superadmin.html");
+      }
   }
   ?>
 
     <div class="">
       <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-        <form action="" method="post" class="login-form" >
+        <form  method="post" class="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
           <span class="login-form-title">Account Login</span>
           <input class="login-input" type="text" placeholder="Username" name="uname" value="<?php echo $uname; ?>" />
           <span style="color:red"><?php echo $err_uname; ?></span>
