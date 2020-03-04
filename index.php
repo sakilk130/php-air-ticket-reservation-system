@@ -35,23 +35,35 @@
   $date = '';
 
   if (isset($_POST['submit'])) {
-      if ($_POST['from'] == 'NULL') {
+      if ($_POST['from'] == 'NULL') 
+      {
           $err_from = '*Please Select';
-      } else {
+      } 
+      else 
+      {
           $from = $_POST['from'];
       }
-      if ($_POST['to'] == 'NULL') {
+      if ($_POST['to'] == 'NULL') 
+      {
           $err_to = '*Please Select';
-      } else {
-          if ($_POST['from'] === $_POST['to']) {
+      } 
+      else 
+      {
+          if ($_POST['from'] === $_POST['to']) 
+          {
               $err_select = '*Error Select';
-          } else {
+          } 
+          else 
+          {
               $to = $_POST['to'];
           }
       }
-      if (empty($_POST['date'])) {
+      if (empty($_POST['date'])) 
+      {
           $err_date = '*Date Required';
-      } else {
+      } 
+      else 
+      {
           $date = $_POST['date'];
       }
   }
@@ -144,7 +156,7 @@
     <section id="background-image">
       <section id="search-flight">
         <div class="flight-search">
-          <form action="">
+          <form action="" method="post">
             <h1 class="flight2-search">Flight Search</h1>
             <table>
               <tr>
@@ -169,20 +181,40 @@
                     ) {
                         echo 'selected';
                     } ?>>COX'S BAZAR</option>
-                    <option value="">RAJSHAHI</option>
+                    <option value="Rajshahi" <?php if ($from == 'Rajshahi') {
+                        echo 'selected';
+                    } ?>>RAJSHAHI</option>
                   </select>
                 </td>
                 <td>
-                  <select name="" id="" class="search-input">
-                    <option value="">---</option>
-                    <option value="">DHAKA</option>
-                    <option value="">CHITTAGONG</option>
-                    <option value="">COX'S BAZAR</option>
-                    <option value="">RAJSHAHI</option>
+                  <select name="to" id="" class="search-input">
+                    <option value="NULL" selected="selected">---</option>
+                    <option value="Dhaka" <?php if ($to == 'Dhaka') {
+                        echo 'selected';
+                    } ?>>DHAKA</option>
+                    <option value="Chittagong" <?php if ($to == 'Chittagong') {
+                        echo 'selected';
+                    } ?>>CHITTAGONG</option>
+                    <option value="Cox's Bazar" <?php if (
+                        $to == "Cox's Bazar"
+                    ) {
+                        echo 'selected';
+                    } ?>>COX'S BAZAR</option>
+                    <option value="Rajshahi" <?php if ($to == 'Rajshahi') {
+                        echo 'selected';
+                    } ?>>RAJSHAHI</option>
                   </select>
                 </td>
-                <td><input type="date" class="search-input"></td>
-                <td><input class="search-btn" type="submit" value="Search"></td>
+                <td><input type="date" class="search-input" name="date" value="<?php echo $date; ?>"></td>
+                <td><input class="search-btn" type="submit" value="Search" name="submit"></td>
+              </tr>
+              <tr>
+              <td><span style="color:red"><?php echo $err_from; ?></span></td>
+              <td>
+              <span style="color:red"><?php echo $err_to; ?></span>
+              <span style="color:red"><?php echo $err_select; ?></span>
+              </td>
+              <td><span style="color:red"><?php echo $err_date; ?></span></td>
               </tr>
             </table>
           </form>
@@ -191,7 +223,7 @@
       <section id="search-result">
         <div>
           <div>
-            <form action="">
+            <form action="" method="post">
               <table class="search-table" style="width: 100%">
                 <thead>
                   <tr>
@@ -214,7 +246,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="" id="" value="Select"></<h3>
+                    <td class="search-table"><input class="select-btn" type="submit" name="select1" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select1; ?></span>
+                    </td>
                   </tr>
                   <tr>
                     <td class="search-table">F100</td>
@@ -224,7 +259,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="" id="" value="Select"></td>
+                    <td class="search-table"><input class="select-btn" type="submit" name="select2" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select2; ?></span>
+                    </td>
                   </tr>
                   <tr>
                     <td class="search-table">F100</td>
@@ -234,7 +272,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table "><input class="select-btn" type="submit" name="" id="" value="Select"></td>
+                    <td class="search-table "><input class="select-btn" type="submit" name="select3" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select3; ?></span>
+                    </td>
                   </tr>
                   <tr>
                     <td class="search-table">F100</td>
@@ -244,7 +285,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="" id="" value="Select"></td>
+                    <td class="search-table"><input class="select-btn" type="submit" name="select4" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select4; ?></span>
+                    </td>
                   </tr>
                   <tr>
                     <td class="search-table">F100</td>
@@ -254,7 +298,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="" id="" value="Select"></td>
+                    <td class="search-table"><input class="select-btn" type="submit" name="select5" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select5; ?></span>
+                    </td>
                   </tr>
                   <tr>
                     <td class="search-table">F100</td>
@@ -264,7 +311,10 @@
                     <td class="search-table">50</td>
                     <td class="search-table">50</td>
                     <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="" id="" value="Select"></td>
+                    <td class="search-table"><input class="select-btn" type="submit" name="select6" id="" value="Select">
+                    <br>
+                    <span style="color:red"><?php echo $errr_select6; ?></span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
