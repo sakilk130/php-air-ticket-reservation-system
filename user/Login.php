@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,15 +19,14 @@
   </head>
 
   <body>
-    <?php
-    session_start();
-    ?>
+   
   <?php
   $err_uname = '';
   $uname = '';
   $err_pass = '';
   $pass = '';
   $wrong_pass="";
+  $err_invalid="";
   if (isset($_POST['submit'])) 
   {
       if (empty($_POST['uname'])) 
@@ -46,12 +48,25 @@
       if($uname == "sakil" && $pass == "123")
       {
         $_SESSION["loggedinuser"]=$uname;
-				header("Location:udashboard.php");
+        header("Location:udashboard.php");
+        
       }
-      elseif($uname == "superadmin" && $pass == "superadmin")
+      else
+      {
+        if(!empty($uname && $pass)){
+          $err_invalid="*Invalid Username Password";
+        }
+      }
+      if($uname == "superadmin" && $pass == "superadmin")
       {
         $_SESSION["loggedinuser"]=$uname;
 				header("Location:/Mid-Project/superadmin/superadmin.html");
+      }
+      else
+      {
+        if(!empty($uname && $pass)){
+          $err_invalid="*Invalid Username Password";
+        }
       }
   }
   ?>
@@ -67,8 +82,10 @@
             class="login-input"
             type="password"
             placeholder="Password" name="pass" value="<?php echo $pass; ?>"/>
-          <br />
+          
           <span style="color:red"><?php echo $err_pass; ?></span>
+          <br>
+          <span style="color:red"><?php echo $err_invalid;?></span>
           <input class="login-form-btn" type="submit" name="submit" value="Sign in">
           
           <div class="text-center p-t-45 p-b-4">

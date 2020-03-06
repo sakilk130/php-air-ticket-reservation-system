@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['loggedinuser']))
+	{
+		header("Location:Login.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +21,70 @@
     <link rel="stylesheet" href="css/udashboard.css" />
   </head>
   <body>
+  <?php
+  $err_from = '';
+  $from = '';
+  $err_to = '';
+  $to = '';
+  $err_select = '';
+  $err_date = '';
+  $date = '';
+  $has_err=false;
+  if (isset($_POST['submit'])) {
+      if ($_POST['from'] == 'NULL') 
+      {
+          $err_from = '*Please Select';
+          $has_err=true;
+      } 
+      else 
+      {
+          $from = $_POST['from'];
+      }
+      if ($_POST['to'] == 'NULL') 
+      {
+          $err_to = '*Please Select';
+          $has_err=true;
+
+      } 
+      else 
+      {
+          if ($_POST['from'] === $_POST['to']) 
+          {
+              $err_select = '*Error Select';
+              $has_err=true;
+          } 
+          else 
+          {
+              $to = $_POST['to'];
+          }
+      }
+      if (empty($_POST['date'])) 
+      {
+          $err_date = '*Date Required';
+          $has_err=true;
+      } 
+      else 
+      {
+          $date = $_POST['date'];
+      }
+      if(!$has_err)
+      {
+        header("Location:usearchresult.php");
+      }
+
+  }
+
+  if(isset($_POST['submit2'])){
+  session_start();
+  if (isset($_SESSION['username']))
+  {
+    unset($_SESSION['username']);
+  }
+  session_destroy();
+  header("location:Login.php");
+  exit();
+  }
+  ?>
     <section id="navbar">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
@@ -41,7 +112,7 @@
                   id="navbardrop"
                   data-toggle="dropdown"
                 >
-                  Hi,Someone
+                  Hi,<?php echo $_SESSION['loggedinuser'];?>
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="ubookflight.php">Booking</a>
@@ -50,7 +121,9 @@
                     >Change Password</a
                   >
                   <a class="dropdown-item" href="usettings.php">Settings</a>
-                  <a class="dropdown-item" href="Login.php">Logout</a>
+                  <form action="" method="post">
+                  <input class ="dropdown-item" type="submit" name="submit2" value="Logout">
+                  </form>
                 </div>
               </li>
             </ul>
@@ -64,30 +137,55 @@
           <section id="search-flight">
             <div class="container-fluid">
               <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-                <form action="usearchresult.php" class="login-form">
+                <form action="" class="login-form" method="post">
                   <span class="login-form-title">Search Flight</span>
                   <br />
                   <span>From</span><br />
-                  <select name="" id="" class="login-input">
-                    <option value="">---</option>
-                    <option value="">DHAKA</option>
-                    <option value="">CHITTAGONG</option>
-                    <option value="">COX'S BAZAR</option>
-                    <option value="">RAJSHAHI</option>
+                  <select name="from" id="" class="login-input">
+                    <option value="NULL">---</option>
+                    <option value="Dhaka" <?php if ($from == 'Dhaka') {
+                        echo 'selected';
+                    } ?>>DHAKA</option>
+                    <option value="Chittagong" <?php if ($from == 'Chittagong') {
+                        echo 'selected';
+                    } ?>>CHITTAGONG</option>
+                    <option value="Cox's Bazar"  <?php if (
+                        $from == "Cox's Bazar"
+                    ) {
+                        echo 'selected';
+                    } ?>>COX'S BAZAR</option>
+                    <option value="Rajshahi" <?php if ($from == 'Rajshahi') {
+                        echo 'selected';
+                    } ?>>RAJSHAHI</option>
                   </select>
+                  <span style="color:red"><?php echo $err_from; ?></span>
                   <br />
                   <span>To</span> <br />
-                  <select name="" id="" class="login-input">
-                    <option value="">---</option>
-                    <option value="">DHAKA</option>
-                    <option value="">CHITTAGONG</option>
-                    <option value="">COX'S BAZAR</option>
-                    <option value="">RAJSHAHI</option>
+                  <select name="to" id="" class="login-input">
+                    <option value="NULL">---</option>
+                    <option value="Dhaka" <?php if ($to == 'Dhaka') {
+                        echo 'selected';
+                    } ?>>DHAKA</option>
+                    <option value="Chittagong" <?php if ($to == 'Chittagong') {
+                        echo 'selected';
+                    } ?>>CHITTAGONG</option>
+                    <option value="Cox's Bazar"  <?php if (
+                        $to == "Cox's Bazar"
+                    ) {
+                        echo 'selected';
+                    } ?>>COX'S BAZAR</option>
+                    <option value="Rajshahi" <?php if ($to == 'Rajshahi') {
+                        echo 'selected';
+                    } ?>>RAJSHAHI</option>
                   </select>
+                  <span style="color:red"><?php echo $err_to; ?></span>
+                  <span style="color:red"><?php echo $err_select; ?></span>
                   <br />
                   <span>Date</span><br />
-                  <input class="login-input" type="date" /><br />
-                  <button class="login-form-btn">Search</button>
+                  <input class="login-input" type="date" name="date" value="<?php echo $date; ?>" /><br />
+                  <span style="color:red"><?php echo $err_date; ?></span>
+                  <input type="submit" class="login-form-btn" name="submit" value="Search">
+                  
                 </form>
               </div>
             </div>

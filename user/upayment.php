@@ -61,7 +61,7 @@
         <div class="payment p-l-55 p-r-55 p-t-65 p-b-50">
           <form action="ubookflight.php" class="payment-form">
             <span class="payment-form-title">Pay With bKash</span>
-            <img src="/image/bKash.png" alt="" class="bimage" />
+            <img src="/Mid-Project/image/bKash.png" alt="" class="bimage" />
             <br />
             <br />
             <table style="width: 80%;" class="pay-table">

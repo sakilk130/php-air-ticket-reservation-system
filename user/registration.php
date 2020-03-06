@@ -36,12 +36,13 @@
   $wrong_pass="";
   $err_birthdate="";
   $birthdate="";
-
+  $has_err=false;
   if(isset($_POST['submit']))
 		{
 			if(empty($_POST['fname']))
 			{
-				$err_fname="*First Name Required";
+        $err_fname="*First Name Required";
+        $has_err=true;
 			}
 			else
 			{			
@@ -49,7 +50,8 @@
       }
       if(empty($_POST['lname']))
 			{
-				$err_lname="*Last Name Required";
+        $err_lname="*Last Name Required";
+        $has_err=true;
 			}
 			else
 			{			
@@ -58,6 +60,7 @@
       if(empty($_POST['uname']))
       {
         $err_uname="*Username Required";
+        $has_err=true;
       }
       else
       {
@@ -66,6 +69,7 @@
       if(empty($_POST['email']))
       {
         $err_email="*Email Required";
+        $has_err=true;
       }
       else
       {
@@ -74,6 +78,7 @@
       if(empty($_POST['phone']))
       {
         $err_phone="*Phone Number Required";
+        $has_err=true;
       }
       else
       {
@@ -82,18 +87,30 @@
       if(empty($_POST['gender']))
       {
         $err_gender="*Gender Required";
+        $has_err=true;
       }
       else
       {
         $gender=$_POST['gender'];
       }
+      if(empty($_POST['birthdate']))
+      {
+        $err_birthdate="*Birthdate is required";
+        $has_err=true;
+      }
+      else
+      {
+        $birthdate=$_POST['birthdate'];
+      }
       if(empty($_POST['pass']))
       {
         $err_pass="*Password Required";
+        $has_err=true;
       }
       if(empty($_POST['cpass']))
       {
         $err_cpass="*Confirm Password Required";
+        $has_err=true;
       }
       else
       {
@@ -105,8 +122,17 @@
         else
         {
           $wrong_pass="*Password Doesn't Match";
+          $has_err=true;
         }
       }
+      if(!$has_err)
+      {
+        echo '<script type="text/javascript">';
+        echo ' alert("Registration Complete")';
+        echo '</script>';
+        header("Location:Login.php");
+      }
+     
       /*if(empty($_POST['cpass']))
       {
         $err_cpass="*Confirm Password Required";
@@ -123,22 +149,7 @@
           $wrong_pass="*Password Doesn't Match";
         }
       }*/
-      if(empty($_POST['gender']))
-      {
-        $err_gender="*Gender is required";
-      }
-      else
-      {
-        $gender=$_POST['gender'];
-      }
-      if(empty($_POST['birthdate']))
-      {
-        $err_birthdate="*Birthdate is required";
-      }
-      else
-      {
-        $birthdate=$_POST['birthdate'];
-      }
+      
       /*if(empty($_POST['pass']))
       {
         $err_pass="*Password Required";
