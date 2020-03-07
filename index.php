@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="user/css/index.css">
+    
 </head>
 
 <body>
@@ -373,6 +374,14 @@
             </div>
           </div>
       </section>
+    <footer class="white-section" id="footer">
+      <div class="container-fluid">
+      <i class="fa fa-facebook-official"></i>
+      <i class="fa fa-instagram"></i>
+      <i class="fa fa-twitter"></i>
+      <p>©2020 Bangladesh Airlines</p>
+      </div>
+    </footer>
 </body>
 
 </html>

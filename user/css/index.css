@@ -121,3 +121,11 @@ h3 {
 .text {
   text-align: center;
 }
+#footer {
+  padding: 7% 15%;
+  text-align: center;
+}
+
+.social-icon {
+  margin: 5px 5px;
+}

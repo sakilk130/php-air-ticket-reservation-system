@@ -75,7 +75,9 @@
       }
       else
       {
-        $err_invalid="*Invalid Username Password";
+        if(!empty($uname && $pass)){
+          $err_invalid="*Invalid Username Password";
+        }
       }
   }
   ?>
