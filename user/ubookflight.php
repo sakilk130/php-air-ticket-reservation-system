@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['loggedinuser']))
+	{
+		header("Location:Login.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +46,7 @@
                   id="navbardrop"
                   data-toggle="dropdown"
                 >
-                  Hi,Someone
+                  Hi,<?php echo $_SESSION['loggedinuser'];?>
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="ubookflight.php">Booking</a>
