@@ -68,6 +68,15 @@
           $err_invalid="*Invalid Username Password";
         }
       }
+      if($uname == "saron" && $pass == "123456")
+      {
+        $_SESSION["loggedinuser"]=$uname;
+				header("Location:/Mid-Project/admin/admin.html");
+      }
+      else
+      {
+        $err_invalid="*Invalid Username Password";
+      }
   }
   ?>
 
