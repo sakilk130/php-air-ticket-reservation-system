@@ -45,6 +45,7 @@
       {
           $pass = $_POST['pass'];
       }
+      
       if($uname == "sakil" && $pass == "123")
       {
         $_SESSION["loggedinuser"]=$uname;
@@ -60,7 +61,7 @@
       if($uname == "superadmin" && $pass == "superadmin")
       {
         $_SESSION["loggedinuser"]=$uname;
-				header("Location:/Mid-Project/superadmin/superadmin.html");
+        header("Location:/Mid-Project/superadmin/superadmin.html");
       }
       else
       {
@@ -71,7 +72,7 @@
       if($uname == "saron" && $pass == "123456")
       {
         $_SESSION["loggedinuser"]=$uname;
-				header("Location:/Mid-Project/admin/admin.html");
+        header("Location:/Mid-Project/admin/admin.html");
       }
       else
       {
@@ -79,6 +80,7 @@
           $err_invalid="*Invalid Username Password";
         }
       }
+      
   }
   ?>
 

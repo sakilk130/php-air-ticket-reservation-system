@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
     <section id="navbar">
@@ -51,6 +51,7 @@
                   <a class="dropdown-item" href="changepassword.php"
                     >Change Password</a
                   >
+
                   <a class="dropdown-item" href="/Mid-Project/user/Login.php"
                     >Logout</a
                   >
@@ -59,36 +60,6 @@
             </ul>
           </div>
         </nav>
-      </div>
-    </section>
-    <section id="settings">
-      <div class="">
-        <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-          <form action="Login.php" class="login-form">
-            <span class="login-form-title">Account Settings</span>
-            <input class="login-input" type="text" placeholder="First Name" />
-            <br />
-            <input
-              class="login-input"
-              type="text"
-              name=""
-              id=""
-              placeholder="Last Name"
-            />
-            <br />
-            <input
-              class="login-input"
-              type="email"
-              name=""
-              id=""
-              placeholder="Email Address"
-            />
-            <br />
-            <input class="login-input" type="text" placeholder="Phone Number" />
-            <br />
-            <button class="login-form-btn">Update</button>
-          </form>
-        </div>
       </div>
     </section>
     <section id="admin-menu">
@@ -143,43 +114,80 @@
       </div>
       <div class="split-right">
         <div>
-          <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="" class="login-form">
-              <span class="login-form-title">Add Flight</span>
-              <input class="login-input" type="text" placeholder="Flight Id" />
+          <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
+            <form action="uselectticket.html" class="search-form">
+              <span class="search-form-title">List of Coustomers</span>
               <br />
-              <input
-                class="login-input"
-                type="text"
-                placeholder="Departing Time"
-              />
               <br />
-              <span>From</span><br />
-              <select name="" id="" class="login-input">
-                <option value="">---</option>
-                <option value="">DHAKA</option>
-                <option value="">CHITTAGONG</option>
-                <option value="">COX'S BAZAR</option>
-                <option value="">RAJSHAHI</option>
-              </select>
-              <br />
-              <span>To</span> <br />
-              <select name="" id="" class="login-input">
-                <option value="">---</option>
-                <option value="">DHAKA</option>
-                <option value="">CHITTAGONG</option>
-                <option value="">COX'S BAZAR</option>
-                <option value="">RAJSHAHI</option>
-              </select>
-              <br />
-              <span>Date</span><br />
-              <input class="login-input" type="date" /><br />
-
-              <input class="login-input" type="text" placeholder="Total Seat" />
-              <br />
-              <input class="login-input" type="text" placeholder="Fare" />
-              <br />
-              <button class="login-form-btn">Add Flight</button>
+              <table class="search-table" style="width: 100%">
+                <thead class="search-table">
+                  <tr>
+                    <th class="search-table">First Name</th>
+                    <th class="search-table">Last Name</th>
+                    <th class="search-table">Username</th>
+                    <th class="search-table">Email</th>
+                    <th class="search-table">Phone</th>
+                    <th class="search-table">Gender</th>
+                    <th class="search-table">Birthdate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                  <tr>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">Raju</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">raju@gmail.com</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">Male</td>
+                    <td class="search-table">25/12/1977</td>
+                  </tr>
+                </tbody>
+              </table>
             </form>
           </div>
         </div>

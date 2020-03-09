@@ -48,14 +48,9 @@
                   Hi,Admin
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="notification.php"
-                    >Notification</a
-                  >
-                  <a class="dropdown-item" href="notice.php">Send Notice</a>
                   <a class="dropdown-item" href="changepassword.php"
                     >Change Password</a
                   >
-                  <a class="dropdown-item" href="settings.php">Settings</a>
                   <a class="dropdown-item" href="/Mid-Project/user/Login.php"
                     >Logout</a
                   >
@@ -95,6 +90,24 @@
                 Flight</a
               >
             </li>
+            <li>
+              <a href="showcustomer.html" style="color: #4caf50;"
+                ><i class="fa fa-eye" style="font-size:30px"></i> Show
+                Customer</a
+              >
+            </li>
+            <li>
+              <a href="" style="color: #4caf50;"
+                ><i class="fa fa-paper-plane-o" style="font-size:30px"></i> Show
+                Bookflight</a
+              >
+            </li>
+            <li>
+              <a href="" style="color: #4caf50;"
+                ><i class="fa fa-bell-o" style="font-size:30px"></i> Show Send
+                Notice</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -111,16 +124,31 @@
                 placeholder="Departing Time"
               />
               <br />
-              <input class="login-input" type="text" placeholder="Departure" />
+              <span>From</span><br />
+              <select name="" id="" class="login-input">
+                <option value="">---</option>
+                <option value="">DHAKA</option>
+                <option value="">CHITTAGONG</option>
+                <option value="">COX'S BAZAR</option>
+                <option value="">RAJSHAHI</option>
+              </select>
               <br />
-              <input class="login-input" type="text" placeholder="Arrival" />
+              <span>To</span> <br />
+              <select name="" id="" class="login-input">
+                <option value="">---</option>
+                <option value="">DHAKA</option>
+                <option value="">CHITTAGONG</option>
+                <option value="">COX'S BAZAR</option>
+                <option value="">RAJSHAHI</option>
+              </select>
               <br />
-
+              <span>Date</span><br />
+              <input class="login-input" type="date" /><br />
               <input class="login-input" type="text" placeholder="Total Seat" />
               <br />
               <input class="login-input" type="text" placeholder="Fare" />
               <br />
-              <button class="login-form-btn">Submit</button>
+              <button class="login-form-btn">Add Flight</button>
             </form>
           </div>
         </div>

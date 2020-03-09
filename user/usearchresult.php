@@ -67,7 +67,7 @@
       <div>
         <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
           <form action="uselectticket.php" class="search-form">
-            <span class="search-form-title">Booking</span>
+            <span class="search-form-title">Search Result</span>
             <br />
             <br />
             <table class="search-table" style="width: 100%">

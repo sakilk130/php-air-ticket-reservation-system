@@ -21,6 +21,28 @@
     <link rel="stylesheet" href="css/upayment.css" />
   </head>
   <body>
+    <?php
+
+    $err_pnum="";
+    $pnum="";
+    $has_err=false;
+    if (isset($_POST['submit']))
+    {
+      if ($_POST['pnum'] == '')
+      {
+        $err_pnum = '*Phone Number Required';
+        $has_err=true;
+      }
+      else
+      {
+        $pnum = $_POST['pnum'];
+      }
+      if(!$has_err)
+      {
+        header("Location:ubookflight.php");
+      }
+    }
+    ?>
     <section id="navbar">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
@@ -66,7 +88,7 @@
     <section id="payment">
       <div>
         <div class="payment p-l-55 p-r-55 p-t-65 p-b-50">
-          <form action="ubookflight.php" class="payment-form">
+          <form action="" class="payment-form" method="post">
             <span class="payment-form-title">Pay With bKash</span>
             <img src="/Mid-Project/image/bKash.png" alt="" class="bimage" />
             <br />
@@ -87,15 +109,17 @@
                 <td class="payment-table payment-input">3700</td>
               </tr>
             </table>
-
             <input
               class="payment-input2"
               type="text"
-              name=""
+              name="pnum"
               id=""
+              value="<?php echo $pnum; ?>"
               placeholder="Phone Number"
             />
-            <button class="payment-form-btn">Pay Now</button>
+            <br>
+            <span style="color:red"><?php echo $err_pnum; ?></span>
+            <input type="submit" class="payment-form-btn" name="submit" value="Pay Now">
           </form>
         </div>
       </div>

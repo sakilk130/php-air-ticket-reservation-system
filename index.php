@@ -34,6 +34,14 @@
   $err_select = '';
   $err_date = '';
   $date = '';
+  $err_name="";
+  $name="";
+  $err_email="";
+  $email="";
+  $err_subject="";
+  $subject="";
+  $err_description="";
+  $description="";
 
   if (isset($_POST['submit'])) {
       if ($_POST['from'] == 'NULL') 
@@ -68,6 +76,45 @@
           $date = $_POST['date'];
       }
   }
+  if (isset($_POST['submit2']))
+  {
+    if ($_POST['name'] == "") 
+      {
+          $err_name = '*Name Required';
+      } 
+      else 
+      {
+          $name = $_POST['name'];
+      }
+      if ($_POST['email'] == "") 
+      {
+          $err_email = '*Email Required';
+      } 
+      else 
+      {
+          $email = $_POST['email'];
+      }
+      if ($_POST['subject'] == "") 
+      {
+          $err_subject = '*Subject Required';
+      } 
+      else 
+      {
+          $subject = $_POST['subject'];
+      }
+      if ($_POST['description'] == "") 
+      {
+          $err_description = '*Description Required';
+      } 
+      else 
+      {
+          $description = $_POST['description'];
+      }
+  }
+
+
+
+
   ?>
 
   <?php
@@ -136,13 +183,13 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#footer">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
                       <form action="user/Login.php">
@@ -373,6 +420,32 @@
               </div>
             </div>
           </div>
+      </section>
+      <section id="contact">
+      <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
+        <form action="#contact" method="post" class="login-form">
+          <h1 class="login-form-title">Contact Us</h1>
+          <input class="login-input" name="name" type="text" placeholder="Enter Name" value="<?php echo $name; ?>"/>
+          <span style="color:red"><?php echo $err_name; ?></span>
+          <br />
+          <input
+            class="login-input"
+            type="email"
+            name="email"
+            placeholder="Mail Address"
+            value="<?php echo $email; ?>"
+          />
+          <span style="color:red"><?php echo $err_email; ?></span>
+          <br />
+          <input class="login-input"  name="subject" type="text" placeholder="Subject" value="<?php echo $subject; ?>"/>
+          <span style="color:red"><?php echo $err_subject; ?></span>
+          <br>
+          <textarea class="login-input" name="description" id="" cols="30" rows="10" placeholder="Description" value="<?php echo $description; ?>"></textarea>
+          <span style="color:red"><?php echo $err_description; ?></span>
+          <input type="submit" name="submit2" class="login-form-btn" value="Submit">
+          
+        </form>
+      </div>
       </section>
     <footer class="white-section" id="footer">
       <div class="container-fluid">
