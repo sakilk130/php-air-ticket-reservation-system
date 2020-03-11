@@ -11,7 +11,7 @@
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="udashboard.php">Home</a>
+              <a class="nav-link" href="superadmin.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -27,24 +27,16 @@
                   id="navbardrop"
                   data-toggle="dropdown"
                 >
-                  Hi,<?php echo $_SESSION['loggedinuser'];?>
+                  <span style="color: #fff">Hi, Super admin</span>
+                 
                 </a>
+                <form action="" method="">
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="ubookflight.php">Booking</a>
-                  <a class="dropdown-item" href="unotice.php">Notice</a>
-                  <a class="dropdown-item" href="uchangepassword.php"
-                    >Change Password</a
+                  <a class="dropdown-item" href="/Mid-Project/user/Login.php"
+                    >Logout</a
                   >
-                  <a class="dropdown-item" href="usettings.php">Settings</a>
-                  <form action="" method="post">
-                    <input
-                      class="dropdown-item"
-                      type="submit"
-                      name="submit2"
-                      value="Logout"
-                    />
-                  </form>
                 </div>
+                </form>
               </li>
             </ul>
           </div>

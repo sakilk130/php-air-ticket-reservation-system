@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['loggedinuser']))
+	{
+		header("Location:Login.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,78 +25,9 @@
     <link rel="stylesheet" href="css/showadmin.css" />
   </head>
   <body>
-    <section id="navbar">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-          <!-- Brand -->
-          <a class="navbar-brand" href="/Mid-Project/index.php"
-            >Bangladesh Airlines</a
-          >
-
-          <!-- Links -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="superadmin.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <!-- Dropdown -->
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbardrop"
-                  data-toggle="dropdown"
-                >
-                  <span style="color: #fff">Hi, Super admin</span>
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/Mid-Project/user/Login.php"
-                    >Logout</a
-                  >
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
+    <?php include "navbar.php"; ?>
     <section id="admin-menu">
-      <div class="split left">
-        <div class="centered">
-          <h4 style="color: beige;">Menu</h4>
-          <ul class="fa-ul">
-            <li>
-              <a href="addadmin.html" style="color: #4caf50;"
-                ><i class="fa fa-user-plus" style="font-size:30px"></i> Add
-                Admin</a
-              >
-            </li>
-            <li>
-              <a href="updateadmin.html" style="color: #4caf50;"
-                ><i class="fa fa-refresh" style="font-size:30px "></i> Update
-                Admin</a
-              >
-            </li>
-            <li>
-              <a href="showadmin.html" style="color: #4caf50;"
-                ><i class="fa fa-group" style="font-size:30px"></i> Show
-                Admin</a
-              >
-            </li>
-            <li>
-              <a href="removeadmin.html" style="color: #4caf50;"
-                ><i class="fa fa-close" style="font-size:30px"></i> Remove
-                Admin</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
+    <?php include "superadminmenu.php"; ?>
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">

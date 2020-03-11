@@ -61,7 +61,7 @@
       if($uname == "superadmin" && $pass == "superadmin")
       {
         $_SESSION["loggedinuser"]=$uname;
-        header("Location:/Mid-Project/superadmin/superadmin.html");
+        header("Location:/Mid-Project/superadmin/superadmin.php");
       }
       else
       {
