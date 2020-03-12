@@ -21,7 +21,19 @@
     <link rel="stylesheet" href="css/usearchresult.css" />
   </head>
   <body>
-  <?php include "navbar.html"?>
+    <?php
+    if(isset($_POST['submit2'])){
+      session_start();
+      if (isset($_SESSION['username']))
+      {
+        unset($_SESSION['username']);
+      }
+      session_destroy();
+      header("location:Login.php");
+      exit();
+      }
+    ?>
+  <?php include "navbar.php"?>
     <section id="search-result">
       <div>
         <div class="search p-l-55 p-r-55 p-t-65 p-b-50">

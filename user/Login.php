@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require("database_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,6 @@
   </head>
 
   <body>
-   
   <?php
   $err_uname = '';
   $uname = '';
@@ -27,11 +27,13 @@
   $pass = '';
   $wrong_pass="";
   $err_invalid="";
+  $has_error=false;
   if (isset($_POST['submit'])) 
   {
       if (empty($_POST['uname'])) 
       {
           $err_uname = '*Username Required';
+          $has_error=true;
       } 
       else 
       {
@@ -40,47 +42,37 @@
       if (empty($_POST['pass'])) 
       {
           $err_pass = '*Password Required';
+          $has_erro=true;
       } 
       else 
       {
           $pass = $_POST['pass'];
       }
-      
-      if($uname == "sakil" && $pass == "123")
-      {
-        $_SESSION["loggedinuser"]=$uname;
-        header("Location:udashboard.php");
-        
-      }
-      else
-      {
-        if(!empty($uname && $pass)){
-          $err_invalid="*Invalid Username Password";
+      if(!$has_error){
+        $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
+			$result=get($query);
+			if(mysqli_num_rows($result) > 0)
+			{
+				$row=mysqli_fetch_assoc($result);
+				if ($row["type"]=="user") {
+          $_SESSION["loggedinuser"]=$row["name"];
+					
+					header("Location:udashboard.php");
+				}
+				elseif ($row["type"]=="admin"){
+					$_SESSION["loggedinuser"]=$row["name"];
+					header("Location:/Mid-Project/admin/admin.html");
         }
-      }
-      if($uname == "superadmin" && $pass == "superadmin")
-      {
-        $_SESSION["loggedinuser"]=$uname;
-        header("Location:/Mid-Project/superadmin/superadmin.php");
-      }
-      else
-      {
-        if(!empty($uname && $pass)){
-          $err_invalid="*Invalid Username Password";
+        elseif(($row["type"]=="superadmin")){
+          $_SESSION["loggedinuser"]=$row["name"];
+					header("Location:/Mid-Project/superadmin/superadmin.php");
         }
+			}
+			else
+			{
+				$err_invalid="*Invalid Username Password";
+			}
       }
-      if($uname == "saron" && $pass == "123456")
-      {
-        $_SESSION["loggedinuser"]=$uname;
-        header("Location:/Mid-Project/admin/admin.html");
-      }
-      else
-      {
-        if(!empty($uname && $pass)){
-          $err_invalid="*Invalid Username Password";
-        }
-      }
-      
   }
   ?>
 

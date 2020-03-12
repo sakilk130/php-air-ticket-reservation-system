@@ -21,8 +21,20 @@
   </head>
   <link rel="stylesheet" href="css/ubookflight.css" />
   <body>
+    <?php
+     if(isset($_POST['submit2'])){
+      session_start();
+      if (isset($_SESSION['username']))
+      {
+        unset($_SESSION['username']);
+      }
+      session_destroy();
+      header("location:Login.php");
+      exit();
+      }
+    ?>
   <?php
-   include("navbar.html"); 
+   include("navbar.php"); 
    ?>
     <section id="ubookflight">
       <div class="">

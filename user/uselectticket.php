@@ -22,7 +22,20 @@
   </head>
   <body>
   <?php
-   include("navbar.html"); 
+    if(isset($_POST['submit2'])){
+      session_start();
+      if (isset($_SESSION['username']))
+      {
+        unset($_SESSION['username']);
+      }
+      session_destroy();
+      header("location:Login.php");
+      exit();
+      }
+    ?>
+    
+  <?php
+   include("navbar.php"); 
    ?>
     <section id="seatselection">
       <div>
