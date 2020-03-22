@@ -1,3 +1,6 @@
+<?php
+require("user/database_connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +47,7 @@
   $description="";
 
   if (isset($_POST['submit'])) {
+    
       if ($_POST['from'] == 'NULL') 
       {
           $err_from = '*Please Select';
@@ -111,10 +115,6 @@
           $description = $_POST['description'];
       }
   }
-
-
-
-
   ?>
 
   <?php

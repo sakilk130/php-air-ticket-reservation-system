@@ -28,6 +28,7 @@
   $wrong_pass="";
   $err_invalid="";
   $has_error=false;
+  $message = "wrong answer";
   if (isset($_POST['submit'])) 
   {
       if (empty($_POST['uname'])) 
@@ -49,28 +50,33 @@
           $pass = $_POST['pass'];
       }
       if(!$has_error){
-        $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
+      $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
 			$result=get($query);
 			if(mysqli_num_rows($result) > 0)
 			{
 				$row=mysqli_fetch_assoc($result);
-				if ($row["type"]=="user") {
-          $_SESSION["loggedinuser"]=$row["name"];
-					
-					header("Location:udashboard.php");
+				if ($row["utype"]=="user") {
+          
+          $f=$row["fname"];
+          $l=$row["lname"];
+          $_SESSION["loggedinuser"]=$f." ".$l;
+          header("Location:udashboard.php");
+          
 				}
-				elseif ($row["type"]=="admin"){
-					$_SESSION["loggedinuser"]=$row["name"];
+				elseif ($row["utype"]=="admin"){
+          $f=$row["fname"];
+          $l=$row["lname"];
+          $_SESSION["loggedinuser"]=$f." ".$l;
 					header("Location:/Mid-Project/admin/admin.html");
         }
-        elseif(($row["type"]=="superadmin")){
-          $_SESSION["loggedinuser"]=$row["name"];
+        elseif(($row["utype"]=="superadmin")){
+          $_SESSION["loggedinuser"]=$row["fname"];
 					header("Location:/Mid-Project/superadmin/superadmin.php");
         }
 			}
 			else
 			{
-				$err_invalid="*Invalid Username Password";
+        $err_invalid="*Invalid Username Password";
 			}
       }
   }
@@ -106,3 +112,4 @@
     </div>
   </body>
 </html>
+

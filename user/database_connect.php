@@ -2,7 +2,7 @@
 	 $serverName="localhost";
 	 $userName="sakil";
 	 $password="sakil";
-	 $dbName="myDB";
+	 $dbName="airlinedb";
 	function execute($query)
 	{
 		global $serverName;

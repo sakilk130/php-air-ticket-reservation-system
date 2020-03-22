@@ -1,4 +1,6 @@
-
+<?php
+require("database_connect.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +41,7 @@
   $err_birthdate="";
   $birthdate="";
   $has_err=false;
+  $u_type="user";
   if(isset($_POST['submit']))
 		{
 			if(empty($_POST['fname']))
@@ -129,52 +132,18 @@
       }
       if(!$has_err)
       {
-        echo '<script type="text/javascript">';
-        echo ' alert("Registration Complete")';
-        echo '</script>';
+      $query = "INSERT INTO users (fname, lname, uname, email, phone, gender, bdate, pass, utype) VALUES ('$fname', '$lname', '$uname', '$email', '$phone', '$gender', '$birthdate', '$pass', '$u_type')";
+      $result=execute($query);
+      if(!$result)
+      {
+        echo "Failed".mysql_error();
+        
+      }
+      else
+      {
         header("Location:Login.php");
       }
-     
-      /*if(empty($_POST['cpass']))
-      {
-        $err_cpass="*Confirm Password Required";
       }
-      else
-      {
-        if($pass==$cpass)
-        {
-          $pass=htmlspecialchars($_POST['pass']);
-          $cpass=htmlspecialchars($_POST['cpass']);
-        }
-        else
-        {
-          $wrong_pass="*Password Doesn't Match";
-        }
-      }*/
-      
-      /*if(empty($_POST['pass']))
-      {
-        $err_pass="*Password Required";
-      }
-      else
-      {
-        $pass=htmlspecialchars($_POST['pass']);
-      }
-      if(empty($_POST['cpass']))
-      {
-        $err_cpass="*Confirm Password Required";
-      }
-      else
-      {
-        if($pass==$cpass)
-        {
-          $cpass=htmlspecialchars($_POST['cpass']);
-        }
-        else
-        {
-          $wrong_pass="*Password Doesn't Match";
-        }
-      }*/
     }
 	?>
     <div class="">

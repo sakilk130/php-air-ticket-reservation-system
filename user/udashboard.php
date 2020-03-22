@@ -3,7 +3,8 @@
     if(!isset($_SESSION['loggedinuser']))
 	{
 		header("Location:Login.php");
-	}
+  }
+  require("database_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
