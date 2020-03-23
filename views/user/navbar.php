@@ -36,7 +36,7 @@
                     >Change Password</a
                   >
                   <a class="dropdown-item" href="usettings.php">Settings</a>
-                  <form action="" method="post">
+                  <form action="../Login.php" method="post">
                     <input
                       class="dropdown-item"
                       type="submit"

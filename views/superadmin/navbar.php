@@ -32,7 +32,7 @@
                 </a>
                 <form action="" method="">
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/Mid-Project/user/Login.php"
+                  <a class="dropdown-item" href="../Login.php"
                     >Logout</a
                   >
                 </div>

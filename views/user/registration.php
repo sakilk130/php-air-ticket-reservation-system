@@ -1,5 +1,5 @@
 <?php
-require("database_connect.php");
+require_once '../../models/database_connect.php';
 ?>
 
 <!DOCTYPE html>

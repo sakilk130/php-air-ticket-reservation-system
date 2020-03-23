@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['loggedinuser']))
 	{
-		header("Location:Login.php");
+    header("Location:../Login.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings</title>
+    <title>Notice</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -18,10 +18,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/unotice.css" />
   </head>
-  <link rel="stylesheet" href="css/usettings.css" />
   <body>
-    <?php
+    <?php 
     if(isset($_POST['submit2'])){
       session_start();
       if (isset($_SESSION['username']))
@@ -34,35 +34,18 @@
       }
     ?>
 
+
+
+
   <?php
    include("navbar.php"); 
    ?>
-    <section id="usettings">
+    <section id="notice-body">
       <div class="">
         <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
           <form action="udashboard.php" class="login-form">
-            <span class="login-form-title">Account Settings</span>
-            <input class="login-input" type="text" placeholder="First Name" />
-            <br />
-            <input
-              class="login-input"
-              type="text"
-              name=""
-              id=""
-              placeholder="Last Name"
-            />
-            <br />
-            <input
-              class="login-input"
-              type="email"
-              name=""
-              id=""
-              placeholder="Email Address"
-            />
-            <br />
-            <input class="login-input" type="text" placeholder="Phone Number" />
-            <br />
-            <button class="login-form-btn">Update</button>
+            <span class="login-form-title">Notice</span>
+            <p>No Notice Here.</p>
           </form>
         </div>
       </div>
