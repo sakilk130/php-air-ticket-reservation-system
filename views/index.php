@@ -1,5 +1,9 @@
 <?php
 require '../controllers/indexController.php';
+$flights = getAllFlights();
+  // echo "<pre>";
+	// print_r($flight);
+	// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +131,7 @@ require '../controllers/indexController.php';
         </div>
       </section>
       <section id="search-result">
-        <div>
+         <div>
           <div>
             <form action="" method="post">
               <table class="search-table" style="width: 100%">
@@ -137,91 +141,35 @@ require '../controllers/indexController.php';
                   <th class="search-table">Departing Time</th>
                   <th class="search-table">Departure</th>
                   <th class="search-table">Arrival</th>
-                  <th class="search-table">Total Seat</th>
+                  <th class="search-table">Date</th>
                   <th class="search-table">Seat Available</th>
                   <th class="search-table">Fare</th>
                   <th class="search-table">Choose</th>
                 </tr>
                 </thead>
+        
                 <tbody>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">9:00AM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="select1" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select1; ?></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">11:00AM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="select2" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select2; ?></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">1:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table "><input class="select-btn" type="submit" name="select3" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select3; ?></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">1:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="select4" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select4; ?></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">1:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="select5" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select5; ?></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">1:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
-                    <td class="search-table"><input class="select-btn" type="submit" name="select6" id="" value="Select">
-                    <br>
-                    <span style="color:red"><?php echo $errr_select6; ?></span>
-                    </td>
-                  </tr>
+                <?php
+				foreach($flights as $flight)
+				{
+					echo "<tr>";
+						echo '<td class="search-table">'.$flight["flightid"].'</td>';
+						echo '<td class="search-table">'.$flight["time"].'</td>';
+						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
+						echo '<td class="search-table">'.$flight["tto"].'</td>';
+            echo '<td class="search-table">'.$flight["date"].'</td>';
+						echo '<td class="search-table">'.$flight["seat"].'</td>';
+            echo '<td class="search-table">'.$flight["fare"].'</td>';
+            echo '<td class="search-table"><input class="select-btn" type="submit" name="select1" value="Select">';
+            echo "<br>";
+            echo '<span style="color:red">'; 
+            echo $errr_select1;
+            echo '</span>';
+            echo '</td>';
+            echo "</tr>";
+				}
+			?>
+                  
                 </tbody>
               </table>
             </form>

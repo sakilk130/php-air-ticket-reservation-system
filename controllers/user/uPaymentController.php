@@ -1,5 +1,11 @@
 <?php
 
+ session_start();
+ if(!isset($_SESSION['loggedinuser']))
+ {
+ header("Location:../Login.php");
+ }
+
 $err_pnum="";
 $pnum="";
 $has_err=false;

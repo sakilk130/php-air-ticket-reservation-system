@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require_once '../models/database_connect.php';
 $err_uname = '';
 $uname = '';
@@ -32,13 +32,12 @@ if (isset($_POST['submit']))
     if (!$has_error)
     {
         $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
-        $result = get($query);
+        $result = getU($query);
         if (mysqli_num_rows($result) > 0)
         {
             $row = mysqli_fetch_assoc($result);
             if ($row["utype"] == "user")
             {
-
                 $f = $row["fname"];
                 $l = $row["lname"];
                 $_SESSION["loggedinuser"] = $f . " " . $l;

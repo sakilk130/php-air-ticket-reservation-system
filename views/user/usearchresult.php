@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-    header("Location:../Login.php");
-	}
+  require '../../controllers/user/uSearchResultControllers.php';  
+  $flights = getAllFlights();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,18 +18,7 @@
     <link rel="stylesheet" href="css/usearchresult.css" />
   </head>
   <body>
-    <?php
-    if(isset($_POST['submit2'])){
-      session_start();
-      if (isset($_SESSION['username']))
-      {
-        unset($_SESSION['username']);
-      }
-      session_destroy();
-      header("location:Login.php");
-      exit();
-      }
-    ?>
+
   <?php include "navbar.php"?>
     <section id="search-result">
       <div>
@@ -55,7 +41,27 @@
                 </tr>
               </thead>
               <tbody class="search-table">
-                <tr>
+              <?php
+				foreach($flights as $flight)
+				{
+					echo "<tr>";
+						echo '<td class="search-table">'.$flight["flightid"].'</td>';
+						echo '<td class="search-table">'.$flight["time"].'</td>';
+						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
+						echo '<td class="search-table">'.$flight["tto"].'</td>';
+            echo '<td class="search-table">'.$flight["date"].'</td>';
+						echo '<td class="search-table">'.$flight["seat"].'</td>';
+            echo '<td class="search-table">'.$flight["fare"].'</td>';
+            echo '<td class="search-table"><input class="select-btn" type="submit" name="select1" value="Select">';
+            echo "<br>";
+            echo '<span style="color:red">'; 
+            echo $errr_select1;
+            echo '</span>';
+            echo '</td>';
+            echo "</tr>";
+				}
+			?>
+                <!-- <tr>
                   <td class="search-table">F100</td>
                   <td class="search-table">9:00</td>
                   <td class="search-table">Dhaka</td>
@@ -66,7 +72,7 @@
                   <td class="search-table">
                     <input class="select-btn" type="submit" value="Select" />
                   </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </form>

@@ -1,9 +1,5 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-    header("Location:../Login.php");
-	}
+require '../../controllers/user/uSettingsControllers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,48 +17,41 @@
   </head>
   <link rel="stylesheet" href="css/usettings.css" />
   <body>
-    <?php
-    if(isset($_POST['submit2'])){
-      session_start();
-      if (isset($_SESSION['username']))
-      {
-        unset($_SESSION['username']);
-      }
-      session_destroy();
-      header("location:Login.php");
-      exit();
-      }
-    ?>
-
   <?php
    include("navbar.php"); 
    ?>
     <section id="usettings">
       <div class="">
         <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-          <form action="udashboard.php" class="login-form">
+          <form action="" class="login-form" method="post">
             <span class="login-form-title">Account Settings</span>
-            <input class="login-input" type="text" placeholder="First Name" />
+            <input class="login-input" type="text" name="fname" placeholder="First Name" value="<?php echo $fname; ?>" />
             <br />
+            <span style="color:red"> <?php echo $err_fname; ?></span>
             <input
               class="login-input"
               type="text"
-              name=""
+              name="lname"
               id=""
               placeholder="Last Name"
+              value="<?php echo $lname; ?>"
             />
             <br />
+            <span style="color:red"><?php echo $err_lname; ?></span>
             <input
               class="login-input"
               type="email"
-              name=""
+              name="email"
               id=""
               placeholder="Email Address"
+              value="<?php echo $email; ?>"
             />
             <br />
-            <input class="login-input" type="text" placeholder="Phone Number" />
+            <span style="color:red"><?php echo $err_email; ?></span>
+            <input class="login-input" type="text" name="phone" placeholder="Phone Number" value="<?php echo $phone; ?>"/>
             <br />
-            <button class="login-form-btn">Update</button>
+            <span style="color:red"><?php echo $err_phone; ?></span>
+            <input type="submit" class="login-form-btn" name="submit" value="Update">
           </form>
         </div>
       </div>

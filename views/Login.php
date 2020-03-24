@@ -45,7 +45,7 @@ require '../controllers/loginController.php';
           </div>
           <div class="text-center">
             <span class="font">Create an account?</span>
-            <a href="registration.php" class="font">Sign up</a>
+            <a href="user/registration.php" class="font">Sign up</a>
           </div>
         </form>
       </div>

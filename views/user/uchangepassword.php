@@ -1,9 +1,5 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-    header("Location:../Login.php");
-	}
+require '../../controllers/user/uChangePasswordControllers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,50 +17,45 @@
   </head>
   <link rel="stylesheet" href="css/uchangepassword.css" />
   <body>
-  <?php 
-    if(isset($_POST['submit2'])){
-      session_start();
-      if (isset($_SESSION['username']))
-      {
-        unset($_SESSION['username']);
-      }
-      session_destroy();
-      header("location:Login.php");
-      exit();
-      }
-    ?>
-    
   <?php
    include("navbar.php"); 
    ?>
     <section id="usettings">
       <div class="">
         <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-          <form action="udashboard.php" class="login-form">
+          <form action="" class="login-form" method="post">
             <span class="login-form-title">Change Password</span>
             <input
               class="login-input"
               type="password"
+              name="cpass"
               placeholder="Current Password"
+              value="<?php echo $cpass;?>"
             />
             <br />
+            <span style="color:red"><?php echo $err_cpass;?></span>
             <input
               class="login-input"
               type="password"
-              name=""
+              name="npass"
               id=""
               placeholder="New Password"
+              value="<?php echo $npass;?>"
             />
             <br />
+            <span style="color:red"><?php echo $err_npass; ?>  </span>
             <input
               class="login-input"
               type="password"
-              name=""
+              name="cfpass"
               id=""
               placeholder="Confirm New Password"
+              value="<?php echo $cfpass; ?>"
             />
             <br />
-            <button class="login-form-btn">Change</button>
+            <span style="color:red"><?php echo $err_cfpass; ?> </span>
+            <span style="color:red"><?php echo $wrong_pass; ?> </span>
+            <input class="login-form-btn" type="submit" name="submit" value="Change">
           </form>
         </div>
       </div>
