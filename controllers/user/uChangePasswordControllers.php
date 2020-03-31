@@ -1,23 +1,27 @@
 <?php
+require_once '../../models/database_connect.php';
+
 session_start();
 if(!isset($_SESSION['loggedinuser']))
 {
-header("Location:../Login.php");
+header("Location:../../views/Login.php");
 }
 
-require_once '../../models/database_connect.php';
 
-$err_cpass="";
-$cpass="";
-$err_npass="";
-$npass="";
-$err_cfpass="";
-$cfpass="";
-$wrong_pass="";
-$has_err=false;
-
-if (isset($_POST['submit']))
+if (isset($_POST['submit6']))
 {
+  $uname=$_SESSION['loggedinuser'];
+
+  $err_cpass="";
+  $cpass="";
+  $err_npass="";
+  $npass="";
+  $err_cfpass="";
+  $cfpass="";
+  $wrong_pass="";
+  $has_err=false;
+  $wrong_cpass="";
+
   if (empty($_POST['cpass']))
   {
     $err_cpass = '*Current Password Required.';
@@ -25,7 +29,28 @@ if (isset($_POST['submit']))
   }
   else
   {
+    $query ="SELECT pass FROM users WHERE uname='$uname'";
+    $pChange = getU($query);
+    if(mysqli_num_rows($pChange) > 0){
+        while($rows = mysqli_fetch_assoc($pChange)){
+          $pass= $rows["pass"];
+        }
+    }
+    else
+    {
+
+    }
     $cpass = $_POST['cpass'];
+
+    if($pass == $cpass)
+    {
+
+    }
+    else
+    {
+      $wrong_cpass="*Password Doesn't Match.";
+      $has_err=true;
+    }
   }
   if(empty($_POST['npass']))
   {
@@ -39,10 +64,10 @@ if (isset($_POST['submit']))
   }
   else
   {
-    if($_POST["npass"] === $_POST["cfpass"])
+    if($_POST["npass"] == $_POST["cfpass"])
     {
-      $npass=htmlspecialchars($_POST['npass']);
-      $cfpass=htmlspecialchars($_POST['cfpass']);
+      $npass=$_POST['npass'];
+      $cfpass=$_POST['cfpass'];
     }
     else
     {
@@ -52,7 +77,10 @@ if (isset($_POST['submit']))
   }
   if(!$has_err)
   {
-    header("Location:ubookflight.php");
+    $query ="UPDATE users SET pass='$cfpass' Where uname='$uname'";
+    echo $query;
+    execute($query);
+    header("location:udashboard.php");
   }
 }
 if(isset($_POST['submit2'])){

@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['loggedinuser']))
 	{
-		header("Location:Login.php");
+		header("Location:../Login.php");
 	}
 ?>
 <!DOCTYPE html>

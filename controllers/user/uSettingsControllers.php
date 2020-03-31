@@ -1,26 +1,23 @@
 <?php
+ require_once '../../models/database_connect.php';
+
     session_start();
     if(!isset($_SESSION['loggedinuser']))
 	{
-    header("Location:../Login.php");
+    header("Location:../../views/Login.php");
     }
-
-    require_once '../../models/database_connect.php';
-
-    
-    $err_fname="";
-    $fname="";
-    $err_lname="";
-    $lname="";
-    $err_email="";
-    $email="";
-    $err_phone="";
-    $phone="";
-    $has_err=false;
-
-
     if(isset($_POST['submit']))
     {
+        $uname=$_SESSION['loggedinuser'];
+        $err_fname="";
+        $fname="";
+        $err_lname="";
+        $lname="";
+        $err_email="";
+        $email="";
+        $err_phone="";
+        $phone="";
+        $has_err=false;
         if(empty($_POST['fname']))
         {
             $err_fname="*First Name Required.";
@@ -59,6 +56,9 @@
         }
         if(!$has_err)
         {
+            $query ="UPDATE users SET fname='$fname', lname='$lname', email='$email', phone=$phone Where uname='$uname'";
+            echo $query;
+            execute($query);
             header("location:udashboard.php");
         }
     }
@@ -71,5 +71,6 @@
         session_destroy();
         header("location:Login.php");
         exit();
-        }
+    }
+    
 ?>

@@ -43,12 +43,12 @@ require '../../controllers/user/uSettingsControllers.php';
               type="email"
               name="email"
               id=""
-              placeholder="Email Address"
+              placeholder="Email Address" 
               value="<?php echo $email; ?>"
             />
             <br />
             <span style="color:red"><?php echo $err_email; ?></span>
-            <input class="login-input" type="text" name="phone" placeholder="Phone Number" value="<?php echo $phone; ?>"/>
+            <input class="login-input" type="text" name="phone" placeholder="Phone Number" value="<?php echo "0".$phone; ?>"/>
             <br />
             <span style="color:red"><?php echo $err_phone; ?></span>
             <input type="submit" class="login-form-btn" name="submit" value="Update">

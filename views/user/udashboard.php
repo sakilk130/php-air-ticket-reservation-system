@@ -1,5 +1,11 @@
 <?php
 require '../../controllers/user/uDashboardControllers.php';
+
+// $products = getAllFlights();
+// 	echo "<pre>";
+// 	print_r($products);
+//   echo "</pre>";
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +27,7 @@ require '../../controllers/user/uDashboardControllers.php';
    require_once("navbar.php"); 
    ?>
    
-    <table>
+    <table class="fulltable">
       <tr>
         <td>
           <section id="search-flight">

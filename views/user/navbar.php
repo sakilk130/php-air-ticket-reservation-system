@@ -1,3 +1,7 @@
+<?php
+require '../../controllers/user/navbarController.php';
+?>
+
 <html>
   <body>
     <section id="navbar">
@@ -27,7 +31,7 @@
                   id="navbardrop"
                   data-toggle="dropdown"
                 >
-                  Hi,<?php echo $_SESSION['loggedinuser'];?>
+                  Hi, <?php echo $fname." ".$lname; ?>
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="ubookflight.php">Booking</a>

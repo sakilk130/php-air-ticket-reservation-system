@@ -1,22 +1,22 @@
 <?php
-
+ require_once '../../models/database_connect.php';
  session_start();
  if(!isset($_SESSION['loggedinuser']))
  {
  header("Location:../Login.php");
- require_once '../../models/database_connect.php';
- }
-  
 
-  $err_from = '';
-  $from = '';
-  $err_to = '';
-  $to = '';
-  $err_select = '';
-  $err_date = '';
-  $date = '';
-  $has_err=false;
+ }
+
   if (isset($_POST['submit'])) {
+    $err_from = '';
+    $from = '';
+    $err_to = '';
+    $to = '';
+    $err_select = '';
+    $err_date = '';
+    $date = '';
+    $has_err=false;
+
       if ($_POST['from'] == 'NULL') 
       {
           $err_from = '*Please Select';
@@ -55,9 +55,20 @@
       }
       if(!$has_err)
       {
-        header("Location:usearchresult.php");
-      }
+       getAllFlights();
+       header("Location:usearchresult.php");
+    }
   }
+
+  function getAllFlights(){
+
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    $date = $_POST['date'];
+    $query ="SELECT * FROM flight WHERE ffrom='$from' AND tto='$to' AND ddate='$date'";
+    $flight = get($query);
+    return $flight;	
+}
   if(isset($_POST['submit2'])){
   session_start();
   if (isset($_SESSION['username']))

@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-    header("Location:../Login.php");
-	}
+require '../../controllers/user/uNoticeController.php';
+$notices = getAllNotice();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,22 +18,6 @@
     <link rel="stylesheet" href="css/unotice.css" />
   </head>
   <body>
-    <?php 
-    if(isset($_POST['submit2'])){
-      session_start();
-      if (isset($_SESSION['username']))
-      {
-        unset($_SESSION['username']);
-      }
-      session_destroy();
-      header("location:Login.php");
-      exit();
-      }
-    ?>
-
-
-
-
   <?php
    include("navbar.php"); 
    ?>
@@ -45,7 +26,16 @@
         <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
           <form action="udashboard.php" class="login-form">
             <span class="login-form-title">Notice</span>
-            <p>No Notice Here.</p>
+            <?php
+            foreach($notices as $notice)
+            {
+              echo "<h5>".$notice["id"]."."."</h5>";
+              //echo "<br>";
+              echo "<h5>".$notice["notice"]."</h5>";
+              //echo "<br>";
+              echo "<hr>";
+            }
+            ?>
           </form>
         </div>
       </div>

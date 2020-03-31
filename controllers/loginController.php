@@ -38,9 +38,11 @@ if (isset($_POST['submit']))
             $row = mysqli_fetch_assoc($result);
             if ($row["utype"] == "user")
             {
-                $f = $row["fname"];
-                $l = $row["lname"];
-                $_SESSION["loggedinuser"] = $f . " " . $l;
+                // $f = $row["fname"];
+                // $l = $row["lname"];
+                // $_SESSION["loggedinuser"] = $f . " " . $l;
+                $name=$row["uname"];
+                $_SESSION["loggedinuser"] = $name;
                 header("Location:../views/user/udashboard.php");
             }
             elseif ($row["utype"] == "admin")

@@ -1,27 +1,19 @@
 <?php
 require_once '../models/database_connect.php';
 
-  $err_from = '';
-  $from = '';
-  $err_to = '';
-  $to = '';
-  $err_select = '';
-  $err_date = '';
-  $date = '';
-  $err_name="";
-  $name="";
-  $err_email="";
-  $email="";
-  $err_subject="";
-  $subject="";
-  $err_description="";
-  $description="";
-
   if (isset($_POST['submit'])) {
-    
+    $err_from = '';
+    $from = '';
+    $err_to = '';
+    $to = '';
+    $err_select = '';
+    $err_date = '';
+    $ddate = '';
+    $has_error=false;
       if ($_POST['from'] == 'NULL') 
       {
           $err_from = '*Please Select';
+          $has_error=true;
       } 
       else 
       {
@@ -30,44 +22,56 @@ require_once '../models/database_connect.php';
       if ($_POST['to'] == 'NULL') 
       {
           $err_to = '*Please Select';
+          $has_error=true;
       } 
       else 
       {
           if ($_POST['from'] === $_POST['to']) 
           {
               $err_select = '*Error Select';
+              $has_error=true;
           } 
           else 
           {
               $to = $_POST['to'];
           }
       }
-      if (empty($_POST['date'])) 
+      if (empty($_POST['ddate'])) 
       {
           $err_date = '*Date Required';
+          $has_error=true;
       } 
       else 
       {
-          $date = $_POST['date'];
+          $ddate = $_POST['ddate'];
       }
-
+      if(!$has_error)
+      {
+        getAllFlights();
+      }
       
   }
-  function getAllFlights()
-      {
-          $query ="SELECT * FROM flight";
-          $flight = get($query);
-          return $flight;	
-      }
-      function getFlight($fid)
-      {
-          $query="SELECT * FROM flight WHERE fid=$fid";
-          $flight=get($query);
-          return $flight[0];
-          
-      }
+  function getAllFlights(){
+
+    $from = $_POST['from'];
+    $to = $_POST['to'];
+    $ddate = $_POST['ddate'];
+
+    $query ="SELECT * FROM flight WHERE ffrom='$from' AND tto='$to' AND ddate='$ddate'";
+    $flight = get($query);
+    return $flight;	
+    }
+      
   if (isset($_POST['submit2']))
   {
+    $err_name="";
+    $name="";
+    $err_email="";
+    $email="";
+    $err_subject="";
+    $subject="";
+    $err_description="";
+    $description="";
     if ($_POST['name'] == "") 
       {
           $err_name = '*Name Required';

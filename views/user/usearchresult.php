@@ -1,6 +1,10 @@
 <?php
-  require '../../controllers/user/uSearchResultControllers.php';  
+require '../../controllers/user/uDashboardControllers.php';
+  require '../../controllers/user/uSearchResultControllers.php'; 
   $flights = getAllFlights();
+	echo "<pre>";
+	print_r($flights);
+  echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +53,7 @@
 						echo '<td class="search-table">'.$flight["time"].'</td>';
 						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
 						echo '<td class="search-table">'.$flight["tto"].'</td>';
-            echo '<td class="search-table">'.$flight["date"].'</td>';
+            echo '<td class="search-table">'.$flight["ddate"].'</td>';
 						echo '<td class="search-table">'.$flight["seat"].'</td>';
             echo '<td class="search-table">'.$flight["fare"].'</td>';
             echo '<td class="search-table"><input class="select-btn" type="submit" name="select1" value="Select">';

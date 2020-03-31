@@ -1,9 +1,7 @@
 <?php
 require '../controllers/indexController.php';
 $flights = getAllFlights();
-  // echo "<pre>";
-	// print_r($flight);
-	// echo "</pre>";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +113,7 @@ $flights = getAllFlights();
                     } ?>>RAJSHAHI</option>
                   </select>
                 </td>
-                <td><input type="date" class="search-input" name="date" value="<?php echo $date; ?>"></td>
+                <td><input type="date" class="search-input" name="ddate" value="<?php echo $ddate; ?>"></td>
                 <td><input class="search-btn" type="submit" value="Search" name="submit"></td>
               </tr>
               <tr>
@@ -157,7 +155,7 @@ $flights = getAllFlights();
 						echo '<td class="search-table">'.$flight["time"].'</td>';
 						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
 						echo '<td class="search-table">'.$flight["tto"].'</td>';
-            echo '<td class="search-table">'.$flight["date"].'</td>';
+            echo '<td class="search-table">'.$flight["ddate"].'</td>';
 						echo '<td class="search-table">'.$flight["seat"].'</td>';
             echo '<td class="search-table">'.$flight["fare"].'</td>';
             echo '<td class="search-table"><input class="select-btn" type="submit" name="select1" value="Select">';
@@ -168,8 +166,7 @@ $flights = getAllFlights();
             echo '</td>';
             echo "</tr>";
 				}
-			?>
-                  
+			?>       
                 </tbody>
               </table>
             </form>

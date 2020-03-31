@@ -34,6 +34,8 @@ require '../../controllers/user/uChangePasswordControllers.php';
             />
             <br />
             <span style="color:red"><?php echo $err_cpass;?></span>
+            <span style="color:red"><?php echo $wrong_cpass;?></span>
+            
             <input
               class="login-input"
               type="password"
@@ -55,7 +57,7 @@ require '../../controllers/user/uChangePasswordControllers.php';
             <br />
             <span style="color:red"><?php echo $err_cfpass; ?> </span>
             <span style="color:red"><?php echo $wrong_pass; ?> </span>
-            <input class="login-form-btn" type="submit" name="submit" value="Change">
+            <input class="login-form-btn" type="submit" name="submit6" value="Change">
           </form>
         </div>
       </div>
