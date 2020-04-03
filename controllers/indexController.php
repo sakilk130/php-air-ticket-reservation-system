@@ -56,11 +56,23 @@ require_once '../models/database_connect.php';
     $from = $_POST['from'];
     $to = $_POST['to'];
     $ddate = $_POST['ddate'];
-
     $query ="SELECT * FROM flight WHERE ffrom='$from' AND tto='$to' AND ddate='$ddate'";
     $flight = get($query);
     return $flight;	
     }
+
+    function getAllFlight($id)
+	{
+		$query="SELECT * FROM flight WHERE id=$id";
+		$flight=get($query);
+		return $flight[0];
+		
+    }
+    
+   
+  if (isset($_POST['select1'])) {
+    echo "<script>alert('You Need to Login First!'); location.href='../views/Login.php';</script>";
+  }
       
   if (isset($_POST['submit2']))
   {
@@ -105,61 +117,6 @@ require_once '../models/database_connect.php';
           $description = $_POST['description'];
       }
   }
+  
 
-  ?>
-
-  <?php
-  $select1 = '';
-  $errr_select1 = '';
-  if (isset($_POST['select1'])) {
-      if ($select1 == '') {
-          $errr_select1 = '*You Need To Login First';
-      }
-  }
-  ?>
-
-  <?php
-  $select2 = '';
-  $errr_select2 = '';
-  if (isset($_POST['select2'])) {
-      if ($select2 == '') {
-          $errr_select2 = '*You Need To Login First';
-      }
-  }
-  ?>
-  <?php
-  $select3 = '';
-  $errr_select3 = '';
-  if (isset($_POST['select3'])) {
-      if ($select3 == '') {
-          $errr_select3 = '*You Need To Login First';
-      }
-  }
-  ?>
-  <?php
-  $select4 = '';
-  $errr_select4 = '';
-  if (isset($_POST['select4'])) {
-      if ($select4 == '') {
-          $errr_select4 = '*You Need To Login First';
-      }
-  }
-  ?>
-  <?php
-  $select5 = '';
-  $errr_select5 = '';
-  if (isset($_POST['select5'])) {
-      if ($select5 == '') {
-          $errr_select5 = '*You Need To Login First';
-      }
-  }
-  ?>
-  <?php
-  $select6 = '';
-  $errr_select6 = '';
-  if (isset($_POST['select6'])) {
-      if ($select6 == '') {
-          $errr_select6 = '*You Need To Login First';
-      }
-  }
-  ?>
+?>

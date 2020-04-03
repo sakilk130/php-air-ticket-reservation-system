@@ -1,10 +1,10 @@
 <?php
 require '../../controllers/user/uDashboardControllers.php';
 
-// $products = getAllFlights();
-// 	echo "<pre>";
-// 	print_r($products);
-//   echo "</pre>";
+$products = getAllFlights();
+	// echo "<pre>";
+	// print_r($products);
+  // echo "</pre>";
   
 ?>
 <!DOCTYPE html>

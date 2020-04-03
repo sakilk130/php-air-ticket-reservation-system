@@ -56,7 +56,7 @@
       if(!$has_err)
       {
        getAllFlights();
-       header("Location:usearchresult.php");
+       header("Location:usearchresult.php?from=".$_POST['from']."&to=".$_POST['to']."&date=".$_POST['date']);
     }
   }
 
