@@ -1,7 +1,5 @@
 <?php
 require '../../controllers/user/uSelectTicketController.php';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,212 +33,85 @@ require '../../controllers/user/uSelectTicketController.php';
                   <table>
                     <tr>
                       <td>
-                      <button class="seat-body" value="A1" onclick="changeBG(this)">A1</button>
-                        <!-- <div class="seat-body " onclick="changeBG(this)">
-                          <span>A1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn1" class="seat-body" value="A1" onclick='changeBG1(this)'>A1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="A2" onclick="changeBG(this)">A2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>A2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div>
-                      </td> -->
+                      <button id="myBtn2" class="seat-body" value="A2" onclick='changeBG2(this)'>A2</button>
                       <td>
-                      <button class="seat-body" value="A3" onclick="changeBG(this)">A3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>A3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn3" class="seat-body" value="A3" onclick='changeBG3(this)'>A3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="B1" onclick="changeBG(this)">B1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>B1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn4" class="seat-body" value="B1" onclick="changeBG3(this)">B1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="B2" onclick="changeBG(this)">B2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>B2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn5" class="seat-body" value="B2" onclick="changeBG4(this)">B2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="B3" onclick="changeBG(this)">B3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>B3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn6" class="seat-body" value="B3" onclick="changeBG5(this)">B3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="C1" onclick="changeBG(this)">C1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>C1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn7" class="seat-body" value="C1" onclick="changeBG6(this)">C1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="C2" onclick="changeBG(this)">C2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>C2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn8" class="seat-body" value="C2" onclick="changeBG7(this)">C2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="C3" onclick="changeBG(this)">C3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>C3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn9" class="seat-body" value="C3" onclick="changeBG8(this)">C3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="D1" onclick="changeBG(this)">D1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>D1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn10" class="seat-body" value="D1" onclick="changeBG9(this)">D1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="D2" onclick="changeBG(this)">D2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>D2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn11" class="seat-body" value="D2" onclick="changeBG10(this)">D2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="D3" onclick="changeBG(this)">D3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>D3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn12" class="seat-body" value="D3" onclick="changeBG11(this)">D3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="E1" onclick="changeBG(this)">E1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>E1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn13" class="seat-body" value="E1" onclick="changeBG12(this)">E1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="E2" onclick="changeBG(this)">E2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>E2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn14" class="seat-body" value="E2" onclick="changeBG13(this)">E2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="E3" onclick="changeBG(this)">E3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>E3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn15" class="seat-body" value="E3" onclick="changeBG14(this)">E3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="F1" onclick="changeBG(this)">F1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>F1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
-                      </td>
+                      <button id="myBtn16" class="seat-body" value="F1" onclick="changeBG15(this)">F1</button>
+                      </button>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="F2" onclick="changeBG(this)">F2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>F2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn17" class="seat-body" value="F2" onclick="changeBG16(this)">F2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="F3" onclick="changeBG(this)">F3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>F3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn18" class="seat-body" value="F3" onclick="changeBG17(this)">F3</button>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                      <button class="seat-body" value="G1" onclick="changeBG(this)">G1</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>G1</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn19" class="seat-body" value="G1" onclick="changeBG18(this)">G1</button>
                       </td>
                       <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
                       <td>
-                      <button class="seat-body" value="G2" onclick="changeBG(this)">G2</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>G2</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn20" class="seat-body" value="G2" onclick="changeBG19(this)">G2</button>
                       </td>
                       <td>
-                      <button class="seat-body" value="G3" onclick="changeBG(this)">G3</button>
-                        <!-- <div class="seat-body" onclick="changeBG(this)">
-                          <span>G3</span>
-                          <span class="seat-handle-left"></span>
-                          <span class="seat-handle-right"></span>
-                          <span class="seat-bottom"></span>
-                        </div> -->
+                      <button id="myBtn21" class="seat-body" value="G3" onclick="changeBG20(this)">G3</button>
                       </td>
                     </tr>
                   </table>
@@ -259,22 +130,20 @@ require '../../controllers/user/uSelectTicketController.php';
                         <td class="seatdetails-table seatdetails-input">
                           Class
                         </td>
-                        <td class="seatdetails-table seatdetails-input">
-                          Business
+                        <td class="seatdetails-table seatdetails-input" id="seatClass">
                         </td>
                       </tr>
                       <tr style="text-align: center;" class="seatdetails-table">
                         <td class="seatdetails-table seatdetails-input">
                           Seats
                         </td>
-                        <td class="seatdetails-table seatdetails-input">A1</td>
+                        <td class="seatdetails-table seatdetails-input" id="demo"></td>
                       </tr>
                       <tr style="text-align: center;" class="seatdetails-table">
                         <td class="seatdetails-table seatdetails-input">
                           Total
                         </td>
-                        <td class="seatdetails-table seatdetails-input">
-                          3500
+                        <td class="seatdetails-table seatdetails-input" id="total">
                         </td>
                       </tr>
                     </table>
@@ -289,9 +158,41 @@ require '../../controllers/user/uSelectTicketController.php';
     </section>
   </body>
   <script>
-    function changeBG(th) {
-      var ss=$(th).toggleClass("red");
-      console.log(ss);
+    function changeBG1(th) {
+      $(th).toggleClass("red");
+      var x = document.getElementById("myBtn1").value;
+      var y=3500;
+      var z="Business";
+      document.getElementById("demo").innerHTML = x;
+      document.getElementById("total").innerHTML=y;
+      document.getElementById("seatClass").innerHTML=z;
+    }
+    function changeBG2(th) {
+      $(th).toggleClass("red");
+      var x = document.getElementById("myBtn2").value;
+      var y=2500;
+      var z="Normal";
+      document.getElementById("demo").innerHTML = x;
+      document.getElementById("total").innerHTML=y;
+      document.getElementById("seatClass").innerHTML=z;
+    }
+    function changeBG3(th) {
+      $(th).toggleClass("red");
+      var x = document.getElementById("myBtn3").value;
+      var y=2500;
+      var z="Normal";
+      document.getElementById("demo").innerHTML = x;
+      document.getElementById("total").innerHTML=y;
+      document.getElementById("seatClass").innerHTML=z;
+    }
+    function changeBG4(th) {
+      $(th).toggleClass("red");
+      var x = document.getElementById("myBtn4").value;
+      var y=3500;
+      var z="Business";
+      document.getElementById("demo").innerHTML = x;
+      document.getElementById("total").innerHTML=y;
+      document.getElementById("seatClass").innerHTML=z;
     }
   </script>
 </html>

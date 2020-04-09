@@ -85,9 +85,9 @@ if (isset($_POST['submit6']))
 }
 if(isset($_POST['submit2'])){
   session_start();
-  if (isset($_SESSION['username']))
+  if (isset($_SESSION['loggedinuser']))
   {
-    unset($_SESSION['username']);
+    unset($_SESSION['loggedinuser']);
   }
   session_destroy();
   header("location:Login.php");

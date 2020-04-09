@@ -109,3 +109,11 @@
 .login-form-btn:hover {
   background-color: #333333;
 }
+.male-input {
+  font-size: 16px;
+  margin-left: 100px;
+}
+.female-input {
+  font-size: 16px;
+  margin-left: 20px;
+}

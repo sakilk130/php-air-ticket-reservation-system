@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-		header("Location:Login.php");
-	}
+require '../../controllers/superadmin/showadminController.php';
+$admins = getAllAdmin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +35,8 @@
               <table class="search-table" style="width: 100%">
                 <thead class="search-table">
                   <tr>
-                    <th class="search-table">Name</th>
+                    <th class="search-table">First Name</th>
+                    <th class="search-table">Last Name</th>
                     <th class="search-table">User Name</th>
                     <th class="search-table">Email Address</th>
                     <th class="search-table">Phone Number</th>
@@ -46,27 +44,19 @@
                   </tr>
                 </thead>
                 <tbody class="search-table">
-                  <tr>
-                    <td class="search-table">Admin1</td>
-                    <td class="search-table">admin1</td>
-                    <td class="search-table">admin1@somthing.com</td>
-                    <td class="search-table">+8801200000100</td>
-                    <td class="search-table">03-02-96</td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">Admin2</td>
-                    <td class="search-table">admin2</td>
-                    <td class="search-table">admin2@somthing.com</td>
-                    <td class="search-table">+8801200000101</td>
-                    <td class="search-table">03-02-96</td>
-                  </tr>
-                  <tr>
-                    <td class="search-table">Admin3</td>
-                    <td class="search-table">admin3</td>
-                    <td class="search-table">admin3@somthing.com</td>
-                    <td class="search-table">+8801200000103</td>
-                    <td class="search-table">03-02-96</td>
-                  </tr>
+                <?php
+				foreach($admins as $admin)
+				{
+					echo "<tr>";
+						echo '<td class="search-table">'.$admin["fname"].'</td>';
+						echo '<td class="search-table">'.$admin["lname"].'</td>';
+						echo '<td class="search-table">'.$admin["uname"].'</td>';
+						echo '<td class="search-table">'.$admin["email"].'</td>';
+            echo '<td class="search-table">'.$admin["phone"].'</td>';
+						echo '<td class="search-table">'.$admin["bdate"].'</td>';
+            echo "</tr>";
+				}
+			?>       
                 </tbody>
               </table>
             </form>

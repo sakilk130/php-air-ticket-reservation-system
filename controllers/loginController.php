@@ -54,7 +54,7 @@ if (isset($_POST['submit']))
             }
             elseif (($row["utype"] == "superadmin"))
             {
-                $_SESSION["loggedinuser"] = $row["fname"];
+                $_SESSION["loggedinuser"] = $row["uname"];
                 header("Location:../views/superadmin/superadmin.php");
             }
         }

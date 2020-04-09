@@ -1,9 +1,7 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-		header("Location:Login.php");
-	}
+require_once '../../controllers/superadmin/removeadminController.php';
+$admins = getAllAdmin();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +29,11 @@
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="#" class="search-form">
+            
               <span class="search-form-title">Remove Admin</span>
 
               <br />
-              <input class="input" type="text" placeholder="Username" />
+              <input class="input" type="text" placeholder="Search Admin" />
               <input class="searchb" type="button" value="Search" />
               <br />
               <br />
@@ -51,19 +49,22 @@
                   </tr>
                 </thead>
                 <tbody class="search-table">
-                  <tr>
-                    <td class="search-table">Admin1</td>
-                    <td class="search-table">admin1</td>
-                    <td class="search-table">admin1@somthing.com</td>
-                    <td class="search-table">+8801200000100</td>
-                    <td class="search-table">03-02-96</td>
-                    <td class="search-table">
-                      <input type="submit" class="deleteb" value="Delete" />
-                    </td>
-                  </tr>
+                <?php
+				foreach($admins as $admin)
+				{
+          $name=$admin["fname"].$admin["lname"];
+					echo "<tr>";
+						echo '<td class="search-table">'.$name.'</td>';
+						echo '<td class="search-table">'.$admin["uname"].'</td>';
+						echo '<td class="search-table">'.$admin["email"].'</td>';
+						echo '<td class="search-table">'.$admin["phone"].'</td>';
+            echo '<td class="search-table">'.$admin["bdate"].'</td>';
+            echo '<td><a href="remove.php?id='.$admin["userid"].'" class="btn btn-danger">Delete</a></td>';
+            echo "</tr>";
+				}
+			?>     
                 </tbody>
               </table>
-            </form>
           </div>
         </div>
       </div>

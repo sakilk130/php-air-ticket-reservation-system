@@ -1,3 +1,6 @@
+<?php
+require '../../controllers/superadmin/navbarController.php';
+?>
 <html>
   <body>
     <section id="navbar">
@@ -27,14 +30,19 @@
                   id="navbardrop"
                   data-toggle="dropdown"
                 >
-                  <span style="color: #fff">Hi, Super admin</span>
+                  <span style="color: #fff">Hi, <?php echo $name." ".$name1; ?> </span>
                  
                 </a>
                 <form action="" method="">
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="../Login.php"
-                    >Logout</a
-                  >
+                <form action="" method="post">
+                    <input
+                      class="dropdown-item"
+                      type="submit"
+                      name="submit2"
+                      value="Logout"
+                    />
+                  </form>
                 </div>
                 </form>
               </li>
