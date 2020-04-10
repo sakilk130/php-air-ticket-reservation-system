@@ -29,7 +29,7 @@
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="admin.html">Home</a>
+              <a class="nav-link" href="admin.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -68,44 +68,44 @@
           <h4 style="color: beige;">Menu</h4>
           <ul class="fa-ul">
             <li>
-              <a href="addFlight.html" style="color: #4caf50;"
+              <a href="addFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-user-plus" style="font-size:30px"></i> Add
                 Flight</a
               >
             </li>
             <li>
-              <a href="updateFlight.html" style="color: #4caf50;"
+              <a href="updateFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-refresh" style="font-size:30px "></i> Update
                 Flight</a
               >
             </li>
             <li>
-              <a href="showFlight.html" style="color: #4caf50;"
+              <a href="showFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-group" style="font-size:30px"></i> Show
                 Flight</a
               >
             </li>
             <li>
-              <a href="removeFlight.html" style="color: #4caf50;"
+              <a href="removeFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-close" style="font-size:30px"></i> Remove
                 Flight</a
               >
             </li>
             <li>
-              <a href="showcustomer.html" style="color: #4caf50;"
+              <a href="showcustomer.php" style="color: #4caf50;"
                 ><i class="fa fa-eye" style="font-size:30px"></i> Show
                 Customer</a
               >
             </li>
             <li>
-              <a href="" style="color: #4caf50;"
+              <a href="showbookflight.php" style="color: #4caf50;"
                 ><i class="fa fa-paper-plane-o" style="font-size:30px"></i> Show
                 Bookflight</a
               >
             </li>
             <li>
-              <a href="" style="color: #4caf50;"
-                ><i class="fa fa-bell-o" style="font-size:30px"></i> Show Send
+              <a href="sendnotice.php" style="color: #4caf50;"
+                ><i class="fa fa-bell-o" style="font-size:30px"></i>Send
                 Notice</a
               >
             </li>
@@ -116,75 +116,68 @@
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
             <form action="uselectticket.html" class="search-form">
-              <span class="search-form-title">List of Flight</span>
+              <span class="search-form-title">List of Flight Book</span>
               <br />
               <br />
               <table class="search-table" style="width: 100%">
                 <thead class="search-table">
                   <tr>
                     <th class="search-table">Flight ID</th>
-                    <th class="search-table">Departing Time</th>
-                    <th class="search-table">Departure</th>
-                    <th class="search-table">Arrival</th>
-                    <th class="search-table">Total Seat</th>
-                    <th class="search-table">Seat Available</th>
+                    <th class="search-table">Username</th>
+                    <th class="search-table">Date</th>
+                    <th class="search-table">Time</th>
+                    <th class="search-table">Payment Number</th>
                     <th class="search-table">Fare</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="search-table">F100</td>
-                    <td class="search-table">9:00AM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                   <tr>
-                    <td class="search-table">F101</td>
-                    <td class="search-table">11:00AM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                  <td class="search-table">F100</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                   <tr>
-                    <td class="search-table">F102</td>
-                    <td class="search-table">1:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                  <td class="search-table">F100</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                   <tr>
-                    <td class="search-table">F103</td>
-                    <td class="search-table">3:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                  <td class="search-table">F100</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                   <tr>
-                    <td class="search-table">F104</td>
-                    <td class="search-table">5:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                  <td class="search-table">F100</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                   <tr>
-                    <td class="search-table">F105</td>
-                    <td class="search-table">7:00PM</td>
-                    <td class="search-table">Dhaka</td>
-                    <td class="search-table">Cox's Bazar</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">50</td>
-                    <td class="search-table">2500</td>
+                  <td class="search-table">F100</td>
+                    <td class="search-table">raju123</td>
+                    <td class="search-table">25/12/1977</td>
+                    <td class="search-table">12:00</td>
+                    <td class="search-table">0215545151</td>
+                    <td class="search-table">3000</td>
                   </tr>
                 </tbody>
               </table>

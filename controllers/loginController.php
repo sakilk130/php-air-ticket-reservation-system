@@ -47,10 +47,9 @@ if (isset($_POST['submit']))
             }
             elseif ($row["utype"] == "admin")
             {
-                $f = $row["fname"];
-                $l = $row["lname"];
-                $_SESSION["loggedinuser"] = $f . " " . $l;
-                header("Location:../views/admin/admin.html");
+                $name=$row["uname"];
+                $_SESSION["loggedinuser"] = $name;
+                header("Location:../views/admin/admin.php");
             }
             elseif (($row["utype"] == "superadmin"))
             {

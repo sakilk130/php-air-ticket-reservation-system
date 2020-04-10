@@ -1,3 +1,7 @@
+<?php
+require_once '../../controllers/admin/showFlightController.php';
+$flights = getAllFlights();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,78 +22,38 @@
     <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
-    <section id="navbar">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-          <!-- Brand -->
-          <a class="navbar-brand" href="/Mid-Project/index.php">Bangladesh Airlines</a>
-
-          <!-- Links -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="admin.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <!-- Dropdown -->
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbardrop"
-                  data-toggle="dropdown"
-                >
-                  Hi,Admin
-                </a>
-                <div class="dropdown-menu">
-                  
-                  <a class="dropdown-item" href="changepassword.php"
-                    >Change Password</a
-                  >
-                 
-                  <a class="dropdown-item" href="/Mid-Project/user/Login.php">Logout</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
+  <?php require_once 'navbar.php'; ?>
     <section id="admin-menu">
       <div class="split left">
         <div class="centered">
           <h4 style="color: beige;">Menu</h4>
           <ul class="fa-ul">
             <li>
-              <a href="addFlight.html" style="color: #4caf50;"
+              <a href="addFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-user-plus" style="font-size:30px"></i> Add
                 Flight</a
               >
             </li>
             <li>
-              <a href="updateFlight.html" style="color: #4caf50;"
+              <a href="updateFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-refresh" style="font-size:30px "></i> Update
                 Flight</a
               >
             </li>
             <li>
-              <a href="showFlight.html" style="color: #4caf50;"
+              <a href="showFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-group" style="font-size:30px"></i> Show
                 Flight</a
               >
             </li>
             <li>
-              <a href="removeFlight.html" style="color: #4caf50;"
+              <a href="removeFlight.php" style="color: #4caf50;"
                 ><i class="fa fa-close" style="font-size:30px"></i> Remove
                 Flight</a
               >
             </li>
             <li>
-              <a href="showcustomer.html" style="color: #4caf50;"
+              <a href="showcustomer.php" style="color: #4caf50;"
                 ><i class="fa fa-eye" style="font-size:30px"></i> Show
                 Customer</a
               >
@@ -111,11 +75,9 @@
       </div>
       <div class="split-right">
         <div>
-          <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="" class="login-form">
-              <span class="login-form-title">Update Flight</span>
-              <input class="input" type="text" placeholder="Flight Id" />
-              <input class="searchb" type="button" value="Search" />
+          <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
+            <form action="uselectticket.html" class="search-form">
+              <span class="search-form-title">List of Flight</span>
               <br />
               <br />
               <table class="search-table" style="width: 100%">
@@ -128,22 +90,26 @@
                     <th class="search-table">Total Seat</th>
                     <th class="search-table">Seat Available</th>
                     <th class="search-table">Fare</th>
-                    <th class="search-table">Choose</th>
                   </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="search-table">F100</td>
-                      <td class="search-table">9:00AM</td>
-                      <td class="search-table">Dhaka</td>
-                      <td class="search-table">Cox's Bazar</td>
-                      <td class="search-table">50</td>
-                      <td class="search-table">50</td>
-                      <td class="search-table">2500</td>
-                    <td class="search-table">
-                      <input type="submit" class="deleteb" value="Update" />
-                    </td>
-                  </tr>
+                </thead>
+                <tbody>
+                <?php
+				foreach($flights as $flight)
+				{
+					echo "<tr>";
+						echo '<td class="search-table">'.$flight["flightid"].'</td>';
+						echo '<td class="search-table">'.$flight["ttime"].'</td>';
+						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
+            echo '<td class="search-table">'.$flight["tto"].'</td>';
+            echo '<td class="search-table">'.$flight["seat"].'</td>';
+            echo '<td class="search-table">'.$flight["seat"].'</td>';
+            echo '<td class="search-table">'.$flight["fare"].'</td>';
+            //echo '<td><a href="update.php?id='.$flight["fid"].'" class="btn btn-success">Update</a></td>';
+            echo "</tr>";
+				}
+			?> 
+                </tbody>
+              </table>
             </form>
           </div>
         </div>
