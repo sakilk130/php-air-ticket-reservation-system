@@ -125,3 +125,16 @@
 .deleteb:hover {
   background-color: #333333;
 }
+.notices {
+  width: 10%;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.notices:hover {
+  background-color: #333333;
+}

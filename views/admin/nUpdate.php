@@ -1,13 +1,14 @@
 <?php
-require_once '../../controllers/admin/showcustomerController.php';
-$users = getAllCustomer();
+require_once '../../controllers/admin/showNoticeController.php';
+$uid = $_GET["id"];
+$notice=getNotice($uid);
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
+    <title>Send Notice</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -22,7 +23,7 @@ $users = getAllCustomer();
     <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
-  <?php require_once 'navbar.php'; ?>
+    <?php require_once 'navbar.php';?>
     <section id="admin-menu">
       <div class="split left">
         <div class="centered">
@@ -70,52 +71,21 @@ $users = getAllCustomer();
                 Notice</a
               >
             </li>
-            <li>
-          <a href="showNotice.php" style="color: #4caf50;"
-            ><i class="fa fa-bell-slash" style="font-size:30px;color:blue"></i>Show
-            Notice</a
-          >
-        </li>
           </ul>
         </div>
       </div>
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="uselectticket.html" class="search-form">
-              <span class="search-form-title">List of Coustomers</span>
+            <form action="" class="search-form" method="post">
+              <span class="search-form-title">Send Notice To Customer</span>
               <br />
               <br />
-              <table class="search-table" style="width: 100%">
-                <thead class="search-table">
-                  <tr>
-                    <th class="search-table">First Name</th>
-                    <th class="search-table">Last Name</th>
-                    <th class="search-table">Username</th>
-                    <th class="search-table">Email</th>
-                    <th class="search-table">Phone</th>
-                    <th class="search-table">Gender</th>
-                    <th class="search-table">Birthdate</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <?php
-				foreach($users as $user)
-				{
-					echo "<tr>";
-						echo '<td class="search-table">'.$user["fname"].'</td>';
-						echo '<td class="search-table">'.$user["lname"].'</td>';
-						echo '<td class="search-table">'.$user["uname"].'</td>';
-            echo '<td class="search-table">'.$user["email"].'</td>';
-            echo '<td class="search-table">'.$user["phone"].'</td>';
-            echo '<td class="search-table">'.$user["gender"].'</td>';
-            echo '<td class="search-table">'.$user["bdate"].'</td>';
-            //echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
-            echo "</tr>";
-				}
-			?> 
-                </tbody>
-              </table>
+              <textarea type="text" name="notice" class="" rows="10" cols="102" placeholder="Type Notice.."><?php echo $notice["notice"]?></textarea>
+              <br>
+              <span style="color:red"><?php echo $err_notice; ?></span> <br>
+              <input type="hidden" name="id" value="<?php echo $notice["id"]?>" >
+              <input type="submit" class="searchb" name="updateNotice" value="Update">
             </form>
           </div>
         </div>

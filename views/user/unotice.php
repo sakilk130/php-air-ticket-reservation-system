@@ -23,21 +23,37 @@ $notices = getAllNotice();
    ?>
     <section id="notice-body">
       <div class="">
-        <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-          <form action="udashboard.php" class="login-form">
-            <span class="login-form-title">Notice</span>
-            <?php
-            foreach($notices as $notice)
-            {
-              echo "<h5>".$notice["id"]."."."</h5>";
-              //echo "<br>";
-              echo "<h5>".$notice["notice"]."</h5>";
-              //echo "<br>";
-              echo "<hr>";
-            }
-            ?>
-          </form>
-        </div>
+      <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
+        <span class="login-form-title">All Notice</span>
+              <br />
+              <br />
+        <table class="search-table" style="width: 100%">
+                <thead class="search-table">
+                  <tr>
+                    <th class="search-table">Date</th>
+                    <th class="search-table">Notice</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+				foreach($notices as $notice)
+				{
+				echo "<tr>";
+				echo '<td class="search-table">'.$notice["ddate"].'</td>';
+				echo '<td class="search-table">'.$notice["notice"].'</td>';
+				// echo '<td class="search-table">'.$notice["uname"].'</td>';
+                // echo '<td class="search-table">'.$user["email"].'</td>';
+                // echo '<td class="search-table">'.$user["phone"].'</td>';
+                // echo '<td class="search-table">'.$user["gender"].'</td>';
+                // echo '<td class="search-table">'.$user["bdate"].'</td>';
+                // echo '<td><a href="nUpdate.php?id='.$notice["id"].'" class="btn btn-success">Edit</a></td>';
+                // echo '<td><a href="nRemove.php?id='.$notice["id"].'" class="btn btn-danger">Remove</a></td>';
+                echo "</tr>";
+				}
+			?>
+                </tbody>
+              </table>
+      </div>
       </div>
     </section>
   </body>

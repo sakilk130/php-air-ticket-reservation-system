@@ -14,14 +14,16 @@
   padding: 0% 10%;
 }
 .login {
+  margin-top: 20px;
   width: 100%;
   background: rgb(224, 224, 224);
   border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   overflow: hidden;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
 .p-l-55 {
   padding-left: 55px;
@@ -38,11 +40,16 @@
 .login-form-title {
   display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: 35px;
+  font-size: 40px;
   color: #555555;
   line-height: 1.2;
   text-align: center;
 }
 .login-form {
   width: 100%;
+}
+.search-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
 }

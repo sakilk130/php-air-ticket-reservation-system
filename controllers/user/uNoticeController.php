@@ -17,7 +17,7 @@ require_once '../../models/database_connect.php';
     }
     function getAllNotice()
 	{
-		$query ="SELECT * FROM notice WHERE type='user'";
+		$query ="SELECT * FROM notice WHERE ttype='user'";
 		$notices = get($query);
 		return $notices;	
 	}

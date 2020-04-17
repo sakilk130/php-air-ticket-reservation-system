@@ -1,9 +1,12 @@
+<?php
+require_once '../../controllers/admin/sendNoticeController.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
+    <title>Send Notice</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -18,50 +21,8 @@
     <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
-    <section id="navbar">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-          <!-- Brand -->
-          <a class="navbar-brand" href="/Mid-Project/index.php"
-            >Bangladesh Airlines</a
-          >
+    <?php require_once 'navbar.php';?>
 
-          <!-- Links -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="admin.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <!-- Dropdown -->
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbardrop"
-                  data-toggle="dropdown"
-                >
-                  Hi,Admin
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="changepassword.php"
-                    >Change Password</a
-                  >
-
-                  <a class="dropdown-item" href="/Mid-Project/user/Login.php"
-                    >Logout</a
-                  >
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
     <section id="admin-menu">
       <div class="split left">
         <div class="centered">
@@ -109,17 +70,26 @@
                 Notice</a
               >
             </li>
+            <li>
+          <a href="showNotice.php" style="color: #4caf50;"
+            ><i class="fa fa-bell-slash" style="font-size:30px;color:blue"></i>Show
+            Notice</a
+          >
+        </li>
           </ul>
         </div>
       </div>
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="uselectticket.html" class="search-form">
+            <form action="" class="search-form" method="post">
               <span class="search-form-title">Send Notice To Customer</span>
               <br />
               <br />
-              <textarea type="text" name="notice" class=""></textarea>
+              <textarea type="text" name="notice" class="" rows="10" cols="102" placeholder="Type Notice.."></textarea>
+              <br>
+              <span style="color:red"><?php echo $err_notice; ?></span> <br>
+              <input type="submit" class="searchb" name="sendNotice" value="Send">
             </form>
           </div>
         </div>

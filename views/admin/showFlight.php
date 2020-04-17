@@ -59,17 +59,23 @@ $flights = getAllFlights();
               >
             </li>
             <li>
-              <a href="" style="color: #4caf50;"
+              <a href="showbookflight.php" style="color: #4caf50;"
                 ><i class="fa fa-paper-plane-o" style="font-size:30px"></i> Show
                 Bookflight</a
               >
             </li>
             <li>
-              <a href="" style="color: #4caf50;"
-                ><i class="fa fa-bell-o" style="font-size:30px"></i> Show Send
+              <a href="sendnotice.php" style="color: #4caf50;"
+                ><i class="fa fa-bell-o" style="font-size:30px"></i>Send
                 Notice</a
               >
             </li>
+            <li>
+          <a href="showNotice.php" style="color: #4caf50;"
+            ><i class="fa fa-bell-slash" style="font-size:30px;color:blue"></i>Show
+            Notice</a
+          >
+        </li>
           </ul>
         </div>
       </div>

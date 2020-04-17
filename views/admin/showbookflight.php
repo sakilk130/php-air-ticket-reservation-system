@@ -1,3 +1,7 @@
+<?php
+require_once '../../controllers/admin/showBookFlightController.php';
+$tickets=getAllTickets();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,50 +22,7 @@
     <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
-    <section id="navbar">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-          <!-- Brand -->
-          <a class="navbar-brand" href="/Mid-Project/index.php"
-            >Bangladesh Airlines</a
-          >
-
-          <!-- Links -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="admin.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <!-- Dropdown -->
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbardrop"
-                  data-toggle="dropdown"
-                >
-                  Hi,Admin
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="changepassword.php"
-                    >Change Password</a
-                  >
-
-                  <a class="dropdown-item" href="/Mid-Project/user/Login.php"
-                    >Logout</a
-                  >
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
+  <?php require_once 'navbar.php'; ?>
     <section id="admin-menu">
       <div class="split left">
         <div class="centered">
@@ -109,79 +70,54 @@
                 Notice</a
               >
             </li>
+            <li>
+          <a href="showNotice.php" style="color: #4caf50;"
+            ><i class="fa fa-bell-slash" style="font-size:30px;color:blue"></i>Show
+            Notice</a
+          >
+        </li>
           </ul>
         </div>
       </div>
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="uselectticket.html" class="search-form">
               <span class="search-form-title">List of Flight Book</span>
               <br />
               <br />
               <table class="search-table" style="width: 100%">
                 <thead class="search-table">
                   <tr>
-                    <th class="search-table">Flight ID</th>
                     <th class="search-table">Username</th>
+                    <th class="search-table">Flight ID</th>
                     <th class="search-table">Date</th>
                     <th class="search-table">Time</th>
-                    <th class="search-table">Payment Number</th>
+                    <th class="search-table">From</th>
+                    <th class="search-table">To</th>
                     <th class="search-table">Fare</th>
+                    <th class="search-table">Payment Number</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
-                  <tr>
-                  <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
-                  <tr>
-                  <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
-                  <tr>
-                  <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
-                  <tr>
-                  <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
-                  <tr>
-                  <td class="search-table">F100</td>
-                    <td class="search-table">raju123</td>
-                    <td class="search-table">25/12/1977</td>
-                    <td class="search-table">12:00</td>
-                    <td class="search-table">0215545151</td>
-                    <td class="search-table">3000</td>
-                  </tr>
+                <?php
+				foreach($tickets as $ticket)
+				{
+					echo "<tr>";
+						echo '<td class="search-table">'.$ticket["uname"].'</td>';
+						echo '<td class="search-table">'.$ticket["fid"].'</td>';
+						echo '<td class="search-table">'.$ticket["ddate"].'</td>';
+            echo '<td class="search-table">'.$ticket["ttime"].'</td>';
+            echo '<td class="search-table">'.$ticket["ffrom"].'</td>';
+            echo '<td class="search-table">'.$ticket["tto"].'</td>';
+            echo '<td class="search-table">'.$ticket["fare"].'</td>';
+            echo '<td class="search-table">'.$ticket["phone"].'</td>';
+            //echo '<td class="search-table">'.$ticket["fare"].'</td>';
+            //echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
+            echo "</tr>";
+				}
+			?> 
                 </tbody>
               </table>
-            </form>
           </div>
         </div>
       </div>
