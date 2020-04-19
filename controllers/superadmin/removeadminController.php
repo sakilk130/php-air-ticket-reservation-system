@@ -18,14 +18,4 @@ require_once '../../models/database_connect.php';
         execute($query);
 		header("Location:../../views/superadmin/removeadmin.php");
     }
-    if(isset($_POST['submit2'])){
-        session_start();
-        if (isset($_SESSION['loggedinuser']))
-        {
-          unset($_SESSION['loggedinuser']);
-        }
-        session_destroy();
-        header("location:../../views/Login.php");
-        exit();
-        }
 ?>

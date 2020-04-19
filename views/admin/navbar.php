@@ -37,9 +37,9 @@ require_once '../../controllers/admin/navbarController.php';
                   <a class="dropdown-item" href="changePassword.php"
                     >Change Password</a
                   >
-                  <a class="dropdown-item" href="../../views/Login.php"
-                    >Logout</a
-                  >
+                  <form action="" method="post">
+                  <input type="submit" class="dropdown-item" name="logout" value="Logout">
+                  </form>
                 </div>
               </li>
             </ul>

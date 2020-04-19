@@ -40,11 +40,11 @@ require '../../controllers/user/navbarController.php';
                     >Change Password</a
                   >
                   <a class="dropdown-item" href="usettings.php">Settings</a>
-                  <form action="../Login.php" method="post">
+                  <form action="" method="post">
                     <input
                       class="dropdown-item"
                       type="submit"
-                      name="submit2"
+                      name="logout"
                       value="Logout"
                     />
                   </form>

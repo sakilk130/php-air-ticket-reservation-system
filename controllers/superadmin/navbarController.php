@@ -1,11 +1,21 @@
 <?php
+session_start();
     require_once '../../models/database_connect.php';
-    session_start();
+    
     if(!isset($_SESSION['loggedinuser']))
 	{
     header("Location:../../views/Login.php");
     }
-
+    if(isset($_POST['logout'])){
+        session_start();
+        if (isset($_SESSION['loggedinuser']))
+        {
+          unset($_SESSION['loggedinuser']);
+        }
+        session_destroy();
+        header("location:../../views/Login.php");
+        exit();
+    }
     $name3=$_SESSION['loggedinuser'];
     $query ="SELECT fname, lname, email, phone FROM users WHERE uname='$name3'";
     $userName = getU($query);

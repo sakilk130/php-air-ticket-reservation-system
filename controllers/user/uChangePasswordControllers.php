@@ -83,14 +83,4 @@ if (isset($_POST['submit6']))
     header("location:udashboard.php");
   }
 }
-if(isset($_POST['submit2'])){
-  session_start();
-  if (isset($_SESSION['loggedinuser']))
-  {
-    unset($_SESSION['loggedinuser']);
-  }
-  session_destroy();
-  header("location:Login.php");
-  exit();
-  }
 ?>

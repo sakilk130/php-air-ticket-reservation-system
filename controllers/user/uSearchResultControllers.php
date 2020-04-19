@@ -16,15 +16,4 @@ require_once '../../models/database_connect.php';
         $flight = get($query);
         return $flight;	
     }
-    
-    if(isset($_POST['submit2'])){
-        session_start();
-        if (isset($_SESSION['username']))
-        {
-          unset($_SESSION['username']);
-        }
-        session_destroy();
-        header("location:Login.php");
-        exit();
-    }
 ?>

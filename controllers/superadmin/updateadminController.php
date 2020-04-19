@@ -85,15 +85,4 @@ require_once '../../models/database_connect.php';
             header("location:../../views/superadmin/updateadmin.php");
         }
     }
-    if(isset($_POST['submit2'])){
-        session_start();
-        if (isset($_SESSION['loggedinuser']))
-        {
-          unset($_SESSION['loggedinuser']);
-        }
-        session_destroy();
-        header("location:../../views/Login.php");
-        exit();
-        }
-
 ?>

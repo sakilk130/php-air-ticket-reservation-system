@@ -33,18 +33,16 @@ require '../../controllers/superadmin/navbarController.php';
                   <span style="color: #fff">Hi, <?php echo $name." ".$name1; ?> </span>
                  
                 </a>
-                <form action="" method="">
                 <div class="dropdown-menu">
                 <form action="" method="post">
                     <input
                       class="dropdown-item"
                       type="submit"
-                      name="submit2"
+                      name="logout"
                       value="Logout"
                     />
                   </form>
                 </div>
-                </form>
               </li>
             </ul>
           </div>
