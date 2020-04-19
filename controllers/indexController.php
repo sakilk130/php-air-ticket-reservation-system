@@ -84,9 +84,11 @@ require_once '../models/database_connect.php';
     $subject="";
     $err_description="";
     $description="";
+    $has_err=false;
     if ($_POST['name'] == "") 
       {
           $err_name = '*Name Required';
+          $has_err=true;
       } 
       else 
       {
@@ -95,6 +97,7 @@ require_once '../models/database_connect.php';
       if ($_POST['email'] == "") 
       {
           $err_email = '*Email Required';
+          $has_err=true;
       } 
       else 
       {
@@ -103,6 +106,7 @@ require_once '../models/database_connect.php';
       if ($_POST['subject'] == "") 
       {
           $err_subject = '*Subject Required';
+          $has_err=true;
       } 
       else 
       {
@@ -111,10 +115,17 @@ require_once '../models/database_connect.php';
       if ($_POST['description'] == "") 
       {
           $err_description = '*Description Required';
+          $has_err=true;
       } 
       else 
       {
           $description = $_POST['description'];
+      }
+      if(!$has_err)
+      {
+        $query = "INSERT INTO contacts (nname, email, ssubject, ddescription) VALUES ('$name', '$email', '$subject', '$description')";
+        $result=execute($query);
+        header("Location:../index.php");
       }
   }
   

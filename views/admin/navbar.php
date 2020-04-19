@@ -7,6 +7,7 @@ require_once '../../controllers/admin/navbarController.php';
       <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
           <!-- Brand -->
+          <span></span>
           <a class="navbar-brand" href="/Mid-Project/index.php"
             >Bangladesh Airlines</a
           >
@@ -33,7 +34,7 @@ require_once '../../controllers/admin/navbarController.php';
                 <span style="color: #fff">Hi, <?php echo $name." ".$name1; ?> </span>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="changepassword.php"
+                  <a class="dropdown-item" href="changePassword.php"
                     >Change Password</a
                   >
                   <a class="dropdown-item" href="../../views/Login.php"

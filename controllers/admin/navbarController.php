@@ -15,6 +15,7 @@
         {
             $name= $rows["fname"];
             $name1= $rows["lname"];
+            $id=$rows["userid"];
         }
     }
     

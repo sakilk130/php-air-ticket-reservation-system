@@ -226,7 +226,7 @@ $flights = getAllFlights();
       </section>
       <section id="contact">
       <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-        <form action="#contact" method="post" class="login-form">
+        <form action="" method="post" class="login-form">
           <h1 class="login-form-title">Contact Us</h1>
           <input class="login-input" name="name" type="text" placeholder="Enter Name" value="<?php echo $name; ?>"/>
           <span style="color:red"><?php echo $err_name; ?></span>
