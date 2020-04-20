@@ -80,7 +80,8 @@ if (isset($_POST['submit6']))
     $query ="UPDATE users SET pass='$cfpass' Where uname='$uname'";
     echo $query;
     execute($query);
-    header("location:udashboard.php");
+    echo "<script>alert('Password Changed!'); location.href='../../views/user/udashboard.php';</script>";
+    //header("location:udashboard.php");
   }
 }
 ?>

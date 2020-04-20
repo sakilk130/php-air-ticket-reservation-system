@@ -23,6 +23,7 @@ $admins = getAllAdmin();
     <link rel="stylesheet" href="css/showadmin.css" />
   </head>
   <body>
+  <script src="updateAjax.js"></script>
     <?php include "navbar.php"; ?>
     <section id="admin-menu">
     <?php include "superadminmenu.php"; ?>
@@ -31,6 +32,7 @@ $admins = getAllAdmin();
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
           <span class="search-form-title">Update Admin</span>
            <br />
+           <input class="input" type="text" placeholder="Search Admin.." onkeyup="search()" id="search" />
               <br />
               <table class="search-table" style="width: 100%">
                 <thead class="search-table">
@@ -43,20 +45,20 @@ $admins = getAllAdmin();
                     <th class="search-table">Choose</th>
                   </tr>
                 </thead>
-                <tbody class="search-table">
+                <tbody id="search_result" class="search-table">
                 <?php
-				foreach($admins as $admin)
-				{
-          $name=$admin["fname"].$admin["lname"];
-					echo "<tr>";
-						echo '<td class="search-table">'.$name.'</td>';
-						echo '<td class="search-table">'.$admin["uname"].'</td>';
-						echo '<td class="search-table">'.$admin["email"].'</td>';
-						echo '<td class="search-table">'.$admin["phone"].'</td>';
-            echo '<td class="search-table">'.$admin["bdate"].'</td>';
-            echo '<td><a href="update.php?id='.$admin["userid"].'" class="btn btn-success">Update</a></td>';
-            echo "</tr>";
-				}
+				// foreach($admins as $admin)
+				// {
+        //   $name=$admin["fname"].$admin["lname"];
+				// 	echo "<tr>";
+				// 		echo '<td class="search-table">'.$name.'</td>';
+				// 		echo '<td class="search-table">'.$admin["uname"].'</td>';
+				// 		echo '<td class="search-table">'.$admin["email"].'</td>';
+				// 		echo '<td class="search-table">'.$admin["phone"].'</td>';
+        //     echo '<td class="search-table">'.$admin["bdate"].'</td>';
+        //     echo '<td><a href="update.php?id='.$admin["userid"].'" class="btn btn-success">Update</a></td>';
+        //     echo "</tr>";
+				// }
 			?>     
                 </tbody>
               </table>

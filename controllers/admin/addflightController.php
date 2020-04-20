@@ -100,8 +100,8 @@ if(isset($_POST['addFlight']))
       {
         $query = "INSERT INTO flight (flightid, ttime, ffrom, tto, ddate, seat, fare) VALUES ('$fid', '$ftime', '$from', '$to', '$fdate', '$fseat', '$ffare')";
         $result=execute($query);
-        // echo "<script>alert('Flight Added'); location.href='../../views/admin/addFlight.php';</script>";
-         header("Location:../../views/admin/addFlight.php");
+        echo "<script>alert('Flight Added !'); location.href='../../views/admin/addFlight.php';</script>";
+        //header("Location:../../views/admin/addFlight.php");
     }
 }
 ?>

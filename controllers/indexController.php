@@ -125,7 +125,8 @@ require_once '../models/database_connect.php';
       {
         $query = "INSERT INTO contacts (nname, email, ssubject, ddescription) VALUES ('$name', '$email', '$subject', '$description')";
         $result=execute($query);
-        header("Location:../index.php");
+        echo "<script>alert('Submited!'); location.href='../index.php';</script>";
+        //header("Location:../index.php");
       }
   }
   

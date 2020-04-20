@@ -1,5 +1,5 @@
 <?php
-require_once '../../controllers/admin/removeFlightController.php';
+require_once '../../controllers/admin/updateFlightController.php';
 $flights = getAllFlights();
 ?>
 <!DOCTYPE html>
@@ -22,18 +22,16 @@ $flights = getAllFlights();
     <link rel="stylesheet" href="css/showFlight.css" />
   </head>
   <body>
+  <script src="removeFlAjax.js"></script>
   <?php require_once 'navbar.php'; ?>
     <section id="admin-menu">
     <?php include "adminMenu.php"; ?>
       <div class="split-right">
         <div>
           <div class="search p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="#" class="search-form">
               <span class="search-form-title">Remove Flight</span>
-
-              <br />
-              <input class="input" type="text" placeholder="Flight Id" />
-              <input class="searchb" type="button" value="Search" />
+              <input class="input" type="text" placeholder="Flight Id..."  onkeyup="search()" id="search"/>
+              <!-- <input class="searchb" type="button" value="Search" /> -->
               <br />
               <br />
               <table class="search-table" style="width: 100%">
@@ -48,26 +46,25 @@ $flights = getAllFlights();
                     <th class="search-table">Fare</th>
                     <th class="search-table">Choose</th>
                   </tr>
-                </thead>
-                <tbody>
-                <?php
-				foreach($flights as $flight)
-				{
-					echo "<tr>";
-						echo '<td class="search-table">'.$flight["flightid"].'</td>';
-						echo '<td class="search-table">'.$flight["ttime"].'</td>';
-						echo '<td class="search-table">'.$flight["ffrom"].'</td>';
-            echo '<td class="search-table">'.$flight["tto"].'</td>';
-            echo '<td class="search-table">'.$flight["seat"].'</td>';
-            echo '<td class="search-table">'.$flight["seat"].'</td>';
-            echo '<td class="search-table">'.$flight["fare"].'</td>';
-            echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
-            echo "</tr>";
-				}
+                  </thead>
+                  <tbody id="search_result">
+                  <?php
+				// foreach($flights as $flight)
+				// {
+				// 	echo "<tr>";
+				// 		echo '<td class="search-table">'.$flight["flightid"].'</td>';
+				// 		echo '<td class="search-table">'.$flight["ttime"].'</td>';
+				// 		echo '<td class="search-table">'.$flight["ffrom"].'</td>';
+        //     echo '<td class="search-table">'.$flight["tto"].'</td>';
+        //     echo '<td class="search-table">'.$flight["seat"].'</td>';
+        //     echo '<td class="search-table">'.$flight["seat"].'</td>';
+        //     echo '<td class="search-table">'.$flight["fare"].'</td>';
+        //     echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
+        //     echo "</tr>";
+				// }
 			?> 
-                </tbody>
-              </table>
-            </form>
+      </tbody>
+      </table>
           </div>
         </div>
       </div>

@@ -59,7 +59,8 @@
             $query ="UPDATE users SET fname='$fname', lname='$lname', email='$email', phone=$phone Where uname='$uname'";
             echo $query;
             execute($query);
-            header("location:udashboard.php");
+            echo "<script>alert('Update Successfull !'); location.href='../../views/user/udashboard.php';</script>";
+            //header("location:udashboard.php");
         }
     }
 ?>

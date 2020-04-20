@@ -53,8 +53,8 @@ $notices = getAllNotice();
                 // echo '<td class="search-table">'.$user["phone"].'</td>';
                 // echo '<td class="search-table">'.$user["gender"].'</td>';
                 // echo '<td class="search-table">'.$user["bdate"].'</td>';
-                echo '<td><a href="nUpdate.php?id='.$notice["id"].'" class="btn btn-success">Edit</a></td>';
-                echo '<td><a href="nRemove.php?id='.$notice["id"].'" class="btn btn-danger">Remove</a></td>';
+                echo '<td class="search-table"><a href="nUpdate.php?id='.$notice["id"].'" class="btn btn-success">Edit</a></td>';
+                echo '<td class="search-table"><a href="nRemove.php?id='.$notice["id"].'" class="btn btn-danger">Remove</a></td>';
                 echo "</tr>";
 				}
 			?> 

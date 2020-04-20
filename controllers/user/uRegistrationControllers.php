@@ -115,7 +115,8 @@ $err_fname="";
       {
       $query = "INSERT INTO users (fname, lname, uname, email, phone, gender, bdate, pass, utype) VALUES ('$fname', '$lname', '$uname', '$email', '$phone', '$gender', '$birthdate', '$pass', '$u_type')";
       $result=execute($query);
-      header("Location:../Login.php");
+      echo "<script>alert('Registration Successfull!'); location.href='../Login.php';</script>";
+      //header("Location:../Login.php");
       }
     }
 

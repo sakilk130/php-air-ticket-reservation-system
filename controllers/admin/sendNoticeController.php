@@ -25,8 +25,8 @@ session_start();
         
         $query = "INSERT INTO notice (ddate, notice, ttype) VALUES ('$currentDateTime', '$notice', '$ttype')";
         $result=execute($query);
-        // echo "<script>alert('Flight Added'); location.href='../../views/admin/addFlight.php';</script>";
-         header("Location:../../views/admin/admin.php");
+        echo "<script>alert('Notice Send!'); location.href='../../views/admin/showNotice.php';</script>";
+        //header("Location:../../views/admin/admin.php");
     }
 }
 ?>

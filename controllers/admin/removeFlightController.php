@@ -15,6 +15,7 @@ session_start();
 	{
         $query ="DELETE FROM flight WHERE fid=$id";
         execute($query);
-		header("Location:../../views/admin/removeFlight.php");
+        echo "<script>alert('Flight Deleted !'); location.href='../../views/admin/removeFlight.php';</script>";
+		//header("Location:../../views/admin/removeFlight.php");
     }
 ?>

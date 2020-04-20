@@ -18,7 +18,7 @@ while($row=mysqli_fetch_assoc($rs))
 	echo '<td class="search-table">'.$row['email'].'</td>';
     echo '<td class="search-table">'.$row['phone'].'</td>';
     echo '<td class="search-table">'.$row['bdate'].'</td>';
-    echo '<td class="search-table"><a href="remove.php?id='.$row['userid'].'" class="btn btn-danger">Delete</a></td>';
+    echo '<td class="search-table"><a href="update.php?id='.$row['userid'].'" class="btn btn-success">Edit</a></td>';
     echo "</tr>";
 }
 ?>

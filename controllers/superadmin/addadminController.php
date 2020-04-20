@@ -119,7 +119,7 @@ if(isset($_POST['submit']))
     {
     $query = "INSERT INTO users (fname, lname, uname, email, phone, gender, bdate, pass, utype) VALUES ('$fname', '$lname', '$uname', '$email', '$phone', '$gender', '$birthdate', '$pass', '$u_type')";
     $result=execute($query);
-    echo "<script>alert('Admin Added'); location.href='superadmin.php';</script>";
+    echo "<script>alert('Admin Added'); location.href='../../views/superadmin/showadmin.php';</script>";
     //header("Location:../../views/Login.php");
     }
   }
