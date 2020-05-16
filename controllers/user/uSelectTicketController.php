@@ -145,167 +145,185 @@
 
         }
 
-        // if(empty($_POST['B2']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_B2="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $B2 = $_POST['B2'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$B2', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
-        // if(empty($_POST['B3']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_B3="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $B3 = $_POST['B3'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat,phonen) VALUES ('$uname', $id, '$B3', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        if(empty($_POST['B2']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_B2="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $B2 = $_POST['B2'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$B2', '$pnum')";
+            //echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
 
-        // if(empty($_POST['B4']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_B4="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $B4 = $_POST['B4'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$B4', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        }
+        if(empty($_POST['B3']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_B3="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $B3 = $_POST['B3'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat,phonen) VALUES ('$uname', $id, '$B3', '$pnum')";
+            //echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
 
-        // if(empty($_POST['C1']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_C1="*Select Seat";
-        //     $has_err=true;
-        // }
-        // else 
-        // {
-        //     $C1 = $_POST['C1'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C1', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        }
 
-        // if(empty($_POST['C2']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_C2="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $C2 = $_POST['C2'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C2', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
-        // if(empty($_POST['C3']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_C3="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $C3 = $_POST['C3'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C3', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        if(empty($_POST['B4']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_B4="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $B4 = $_POST['B4'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$B4', '$pnum')";
+            //echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+        }
 
-        // if(empty($_POST['C4']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_C4="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $C4 = $_POST['C4'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C4', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        if(empty($_POST['C1']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_C1="*Select Seat";
+            $has_err=true;
+        }
+        else 
+        {
+            $C1 = $_POST['C1'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C1', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+        }
+
+        if(empty($_POST['C2']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_C2="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $C2 = $_POST['C2'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C2', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+
+        }
+        if(empty($_POST['C3']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_C3="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $C3 = $_POST['C3'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C3', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+
+        }
+
+        if(empty($_POST['C4']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_C4="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $C4 = $_POST['C4'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$C4', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+        }
 
 
-        // if(empty($_POST['D1']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_D1="*Select Seat";
-        //     $has_err=true;
-        // }
-        // else 
-        // {
-        //     $D1 = $_POST['D1'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D1', ''$pnum)";
-        //     echo $query;
-        //     execute($query);
-        // }
+        if(empty($_POST['D1']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_D1="*Select Seat";
+            $has_err=true;
+        }
+        else 
+        {
+            $D1 = $_POST['D1'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D1', ''$pnum)";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
 
-        // if(empty($_POST['D2']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_D2="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $D2 = $_POST['D2'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D2','$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
-        // if(empty($_POST['D3']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_D3="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $D3 = $_POST['D3'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D3', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        }
 
-        // if(empty($_POST['D4']) && ($_POST['pnum'] == ''))
-        // {
-        //     $err_pnum="*Phone Number Required";
-        //     $err_AD="*Select Seat";
-        //     $has_err=true;
-        //   }
-        // else 
-        // {
-        //     $D4 = $_POST['D4'];
-        //     $id=$_POST["id"];
-        //     $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D4', '$pnum')";
-        //     echo $query;
-        //     execute($query);
-        // }
+        if(empty($_POST['D2']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_D2="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $D2 = $_POST['D2'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D2','$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+        }
+        if(empty($_POST['D3']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_D3="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $D3 = $_POST['D3'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D3', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+
+        }
+
+        if(empty($_POST['D4']))
+        {
+            $err_pnum="*Phone Number Required";
+            $err_AD="*Select Seat";
+            $has_err=true;
+          }
+        else 
+        {
+            $D4 = $_POST['D4'];
+            $id=$_POST["id"];
+            $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$D4', '$pnum')";
+            // echo $query;
+            execute($query);
+            echo "<script>alert('Payment Successfull!'); location.href='../../views/user/udashboard.php';</script>";
+
+        }
     }
 ?>

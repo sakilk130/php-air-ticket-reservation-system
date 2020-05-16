@@ -35,12 +35,16 @@ require '../../controllers/superadmin/navbarController.php';
                 </a>
                 <div class="dropdown-menu">
                 <form action="" method="post">
+                <a class="dropdown-item" href="changePassword.php"
+                    >Change Password</a
+                  >
                     <input
                       class="dropdown-item"
                       type="submit"
                       name="logout"
                       value="Logout"
                     />
+                   
                   </form>
                 </div>
               </li>

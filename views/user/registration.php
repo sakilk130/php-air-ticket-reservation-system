@@ -17,11 +17,12 @@ require_once '../../controllers/user/uRegistrationControllers.php';
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
     />
+    <script src="registrationValid.js"></script>
   </head>
   <body>
     <div class="">
       <div class="register p-l-55 p-r-55 p-t-65 p-b-50">
-        <form action="" class="register-form" method="post">
+        <form action="" name="RegForm" class="register-form" method="post" onsubmit="return validationn()">
           <span class="register-form-title">Register Here</span>
           <input
             class="register-input"

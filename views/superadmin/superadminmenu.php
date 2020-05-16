@@ -27,6 +27,9 @@
               Admin</a
             >
           </li>
+          <li>
+          <a href="contactUs.php" style="color: #4caf50;"><i class="fa fa-commenting-o" style="font-size:30px;color:#E3CECA"></i>Contact </a>
+          </li>
         </ul>
       </div>
     </div>

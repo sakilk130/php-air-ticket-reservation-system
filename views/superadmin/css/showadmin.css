@@ -130,3 +130,11 @@
 .deleteb:hover {
   background-color: #333333;
 }
+.tomail {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #383636;
+  line-height: 1.2;
+  text-align: center;
+}

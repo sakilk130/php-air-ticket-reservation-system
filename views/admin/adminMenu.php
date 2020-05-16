@@ -18,7 +18,7 @@
             </li>
             <li>
               <a href="showFlight.php" style="color: #4caf50;"
-                ><i class="fa fa-group" style="font-size:30px;color:DarkKhaki"></i> Show
+                ><i class="fa fa-group" style="font-size:30px;color:#CAE3DE"></i> Show
                 Flight</a
               >
             </li>
@@ -36,7 +36,7 @@
             </li>
             <li>
               <a href="showbookflight.php" style="color: #4caf50;"
-                ><i class="fa fa-paper-plane-o" style="font-size:30px;color:DarkKhaki"></i> Show
+                ><i class="fa fa-paper-plane-o" style="font-size:30px;color:#D2E3CA"></i> Show
                 Bookflight</a
               >
             </li>
@@ -48,7 +48,7 @@
             </li>
             <li>
           <a href="showNotice.php" style="color: #4caf50;"
-            ><i class="fa fa-bell-slash" style="font-size:30px;color:red"></i>Show
+            ><i class="fa fa-bullhorn" style="font-size:30px;color:#E3CECA"></i>Show
             Notice</a
           >
         </li>
