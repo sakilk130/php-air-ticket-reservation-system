@@ -1,5 +1,8 @@
 <?php
-require '../../controllers/user/uSelectTicketController.php';
+require_once '../../controllers/user/uSelectTicketController.php'; 
+$id=$_GET['id'];
+$flightinfo=getflightInfo($id);
+$ticketinfo=getTicketInfo($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,179 +23,390 @@ require '../../controllers/user/uSelectTicketController.php';
   <?php
    include("navbar.php"); 
    ?>
-    <section id="seatselection">
-      <div>
+   <form method="post" action="">
+   <section class="clearfix">
+     <table>
+       <tr>
+         
+      <td style="padding-left: 200px;">
+      <div class="payment p-l-55 p-r-55 p-t-65 p-b-50" style="text-align: center;">
+      <span class="payment-form-title">Select Seat</span>
+      <br>
+      <br>
         <table>
-          <tr>
-            <td>
-              <div class="selection p-l-55 p-r-55 p-t-65 p-b-50">
-                <form action="#" class="selection-form">
-                  <span class="selection-form-title">Select Ticket</span>
-                  <br />
-                  <br />
-                  <table>
-                    <tr>
-                      <td>
-                      <button id="myBtn1" class="seat-body" value="A1" onclick='changeBG1(this)'>A1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn2" class="seat-body" value="A2" onclick='changeBG2(this)'>A2</button>
-                      <td>
-                      <button id="myBtn3" class="seat-body" value="A3" onclick='changeBG3(this)'>A3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn4" class="seat-body" value="B1" onclick="changeBG3(this)">B1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn5" class="seat-body" value="B2" onclick="changeBG4(this)">B2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn6" class="seat-body" value="B3" onclick="changeBG5(this)">B3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn7" class="seat-body" value="C1" onclick="changeBG6(this)">C1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn8" class="seat-body" value="C2" onclick="changeBG7(this)">C2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn9" class="seat-body" value="C3" onclick="changeBG8(this)">C3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn10" class="seat-body" value="D1" onclick="changeBG9(this)">D1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn11" class="seat-body" value="D2" onclick="changeBG10(this)">D2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn12" class="seat-body" value="D3" onclick="changeBG11(this)">D3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn13" class="seat-body" value="E1" onclick="changeBG12(this)">E1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn14" class="seat-body" value="E2" onclick="changeBG13(this)">E2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn15" class="seat-body" value="E3" onclick="changeBG14(this)">E3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn16" class="seat-body" value="F1" onclick="changeBG15(this)">F1</button>
-                      </button>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn17" class="seat-body" value="F2" onclick="changeBG16(this)">F2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn18" class="seat-body" value="F3" onclick="changeBG17(this)">F3</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <button id="myBtn19" class="seat-body" value="G1" onclick="changeBG18(this)">G1</button>
-                      </td>
-                      <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
-                      <td>
-                      <button id="myBtn20" class="seat-body" value="G2" onclick="changeBG19(this)">G2</button>
-                      </td>
-                      <td>
-                      <button id="myBtn21" class="seat-body" value="G3" onclick="changeBG20(this)">G3</button>
-                      </td>
-                    </tr>
-                  </table>
-                </form>
-              </div>
-            </td>
-            <td>
-              <div class="seatdetails p-l-55 p-r-55 p-t-65 p-b-50">
-                <form action="upayment.php" class="seatdetails-form">
-                  <span class="seatdetails-form-title">Seat Details</span>
-                  <br />
-                  <br />
-                  <div style="margin-left: 115px;">
-                    <table style="width: 80%;" class="seatdetails-table">
-                      <tr style="text-align: center;" class="seatdetails-table">
-                        <td class="seatdetails-table seatdetails-input">
-                          Class
-                        </td>
-                        <td class="seatdetails-table seatdetails-input" id="seatClass">
-                        </td>
-                      </tr>
-                      <tr style="text-align: center;" class="seatdetails-table">
-                        <td class="seatdetails-table seatdetails-input">
-                          Seats
-                        </td>
-                        <td class="seatdetails-table seatdetails-input" id="demo"></td>
-                      </tr>
-                      <tr style="text-align: center;" class="seatdetails-table">
-                        <td class="seatdetails-table seatdetails-input">
-                          Total
-                        </td>
-                        <td class="seatdetails-table seatdetails-input" id="total">
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <button class="seatdetails-form-btn">Continue</button>
-                </form>
-              </div>
-            </td>
-          </tr>
+          <?php
+
+          echo "<tr>";
+          echo "<td style='padding-left: 70px;'>";
+          if($ticketinfo['sseat']=="A1")
+          {
+            echo "<div class='sseatbody' id='seata1'>";
+            echo "A1";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seata1');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            A1
+            <input type="checkbox" name="A1" value="A1">
+            </div>';
+            
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="A2")
+          {
+            echo "<div class='sseatbody' id='seata2'>";
+            echo "A2";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seata2');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            A2
+            <input type="checkbox" name="A2" value="A2">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="A3")
+          {
+            echo "<div class='sseatbody' id='seata3'>";
+            echo "A3";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seata3');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            A3
+            <input type="checkbox" name="A3" value="A3">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="A4")
+          {
+            echo "<div class='sseatbody' id='seata4'>";
+            echo "A4";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seata4');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            A4
+            <input type="checkbox" name="A4" value="A4">
+            </div>';
+          }
+          echo "</td>";
+          echo "</tr>";
+
+          echo "<tr>";
+          echo "<td style='padding-left: 70px;'>";
+          if($ticketinfo['sseat']=="B1")
+          {
+            echo "<div class='sseatbody' id='seatb1'>";
+            echo "B1";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seatb1');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            B1
+            <input type="checkbox" name="B1" value="B1">
+            </div>';
+            
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="B2")
+          {
+            echo "<div class='sseatbody' id='seatb2'>";
+            echo "B2";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seata2');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            B2
+            <input type="checkbox" name="B2" value="B2">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="B3")
+          {
+            echo "<div class='sseatbody' id='seatb3'>";
+            echo "B3";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatb3');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            B3
+            <input type="checkbox" name="B3" value="B3">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="B4")
+          {
+            echo "<div class='sseatbody' id='seatb4'>";
+            echo "B4";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatb4');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            B4
+            <input type="checkbox" name="B4" value="B4">
+            </div>';
+          }
+          echo "</td>";
+          echo "</tr>";
+
+
+          echo "<tr>";
+          echo "<td style='padding-left: 70px;'>";
+          if($ticketinfo['sseat']=="C1")
+          {
+            echo "<div class='sseatbody' id='seatc1'>";
+            echo "C1";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seatc1');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            C1
+            <input type="checkbox" name="C1" value="C1">
+            </div>';
+            
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="C2")
+          {
+            echo "<div class='sseatbody' id='seatc2'>";
+            echo "C2";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seatc2');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            C2
+            <input type="checkbox" name="C2" value="C2">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="C3")
+          {
+            echo "<div class='sseatbody' id='seatc3'>";
+            echo "C3";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatc3');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            C3
+            <input type="checkbox" name="C3" value="C3">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="C4")
+          {
+            echo "<div class='sseatbody' id='seatc4'>";
+            echo "C4";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatc4');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            C4
+            <input type="checkbox" name="C4" value="C4">
+            </div>';
+          }
+          echo "</td>";
+          echo "</tr>";
+
+          echo "<tr>";
+          echo "<td style='padding-left: 70px;'>";
+          if($ticketinfo['sseat']=="D1")
+          {
+            echo "<div class='sseatbody' id='seatd1'>";
+            echo "D1";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seatd1');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            D1
+            <input type="checkbox" name="D1" value="D1">
+            </div>';
+            
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="D2")
+          {
+            echo "<div class='sseatbody' id='seatd2'>";
+            echo "D2";
+            echo "</div>";
+            echo "<script> 
+            var element = document.getElementById('seatd2');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+           echo' <div class="sseatbody">
+            D2
+            <input type="checkbox" name="D2" value="D2">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="D3")
+          {
+            echo "<div class='sseatbody' id='seatd3'>";
+            echo "D3";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatd3');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            D3
+            <input type="checkbox" name="D3" value="D3">
+            </div>';
+          }
+          echo "</td>";
+          echo "<td>";
+          if($ticketinfo['sseat']=="D4")
+          {
+            echo "<div class='sseatbody' id='seatd4'>";
+            echo "D4";
+            echo "</div>";
+            echo "<script>
+            var element=document.getElementById('seatd4');
+            element.classList.remove('sseatbody');
+            element.classList.add('booked');
+            </script>";
+          }
+          else
+          {
+            echo' <div class="sseatbody">
+            D4
+            <input type="checkbox" name="D4" value="D4">
+            </div>';
+          }
+          echo "</td>";
+          echo "</tr>";
+
+          ?>
+          <input type="hidden" name="id" value="<?php echo $flightinfo["fid"]?>" >
+         
         </table>
+        </div>
+        </td>
+        <td style="padding-left: 100px;">
+      <div>
+        <div class="payment p-l-55 p-r-55 p-t-65 p-b-50">
+            <span class="payment-form-title">Pay With bKash</span>
+            <img src="../../image/bKash.png" alt="" class="bimage" />
+            <input
+              class="payment-input2"
+              type="text"
+              name="pnum"
+              id=""
+              value="<?php echo $pnum; ?>"
+              placeholder="Phone Number"
+            />
+            <br>
+            <span style="color:red"><?php echo $err_pnum; ?></span><br>
+            <span style="color:red"><?php echo $err_A1; ?></span>
+            <input type="submit" class="payment-form-btn" name="payNow" value="Pay Now">
+        </div>
       </div>
-    </section>
+      </td>
+      </tr>
+     </table>
+      </section>
+    </form>
   </body>
-  <script>
-    function changeBG1(th) {
-      $(th).toggleClass("red");
-      var x = document.getElementById("myBtn1").value;
-      var y=3500;
-      var z="Business";
-      document.getElementById("demo").innerHTML = x;
-      document.getElementById("total").innerHTML=y;
-      document.getElementById("seatClass").innerHTML=z;
-    }
-    function changeBG2(th) {
-      $(th).toggleClass("red");
-      var x = document.getElementById("myBtn2").value;
-      var y=2500;
-      var z="Normal";
-      document.getElementById("demo").innerHTML = x;
-      document.getElementById("total").innerHTML=y;
-      document.getElementById("seatClass").innerHTML=z;
-    }
-    function changeBG3(th) {
-      $(th).toggleClass("red");
-      var x = document.getElementById("myBtn3").value;
-      var y=2500;
-      var z="Normal";
-      document.getElementById("demo").innerHTML = x;
-      document.getElementById("total").innerHTML=y;
-      document.getElementById("seatClass").innerHTML=z;
-    }
-    function changeBG4(th) {
-      $(th).toggleClass("red");
-      var x = document.getElementById("myBtn4").value;
-      var y=3500;
-      var z="Business";
-      document.getElementById("demo").innerHTML = x;
-      document.getElementById("total").innerHTML=y;
-      document.getElementById("seatClass").innerHTML=z;
-    }
-  </script>
 </html>
+

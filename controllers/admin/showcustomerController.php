@@ -11,4 +11,5 @@ session_start();
 		$user = get($query);
 		return $user;
     }
+    
 ?>

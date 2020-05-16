@@ -1,9 +1,14 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['loggedinuser']))
-	{
-    header("Location:../Login.php");
-	}
+require_once '../../controllers/user/uBookFlightController.php';
+$uname=$_SESSION['loggedinuser'];
+$s="localhost";
+$u="sakil";
+$p="sakil";
+$d="airlinedb";
+$conn=mysqli_connect($s,$u,$p,$d);
+$query="SELECT * FROM tickets WHERE uname='$uname'";
+$rs=mysqli_query($conn,$query);
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,18 +26,6 @@
   </head>
   <link rel="stylesheet" href="css/ubookflight.css" />
   <body>
-    <?php
-     if(isset($_POST['submit2'])){
-      session_start();
-      if (isset($_SESSION['username']))
-      {
-        unset($_SESSION['username']);
-      }
-      session_destroy();
-      header("location:Login.php");
-      exit();
-      }
-    ?>
   <?php
    include("navbar.php"); 
    ?>
@@ -51,20 +44,40 @@
                   <th class="book-table">Departure</th>
                   <th class="book-table">Arrival</th>
                   <th class="book-table">Fare</th>
+                  <th class="book-table">Seat</th>
                   <th class="book-table">Choose</th>
                 </tr>
               </thead>
               <tbody class="book-table">
-                <tr>
-                  <td class="book-table">F100</td>
-                  <td class="book-table">9:00</td>
-                  <td class="book-table">Dhaka</td>
-                  <td class="book-table">Chittagong</td>
-                  <td class="book-table">3000</td>
-                  <td class="book-table">
-                    <input class="print-btn" type="submit" value="Print" />
-                  </td>
-                </tr>
+              <?php
+        while($row=mysqli_fetch_assoc($rs))
+		{
+			echo "<tr>";
+            $id=$row["flightid"];
+            $ss="localhost";
+            $uu="sakil";
+            $pp="sakil";
+            $dd="airlinedb";
+            $connn=mysqli_connect($ss,$uu,$pp,$dd);
+            $queryy="SELECT * FROM flight WHERE fid=$id";
+            $rss=mysqli_query($connn,$queryy);
+            mysqli_close($conn);
+            while($roww=mysqli_fetch_assoc($rss))
+            {
+						echo '<td class="book-table">'.$roww["flightid"].'</td>';
+            echo '<td class="book-table">'.$roww["ttime"].'</td>';
+            echo '<td class="book-table">'.$roww["ffrom"].'</td>';
+            echo '<td class="book-table">'.$roww["tto"].'</td>';
+						echo '<td class="book-table">'.$roww["fare"].'</td>';
+            }
+            echo '<td class="book-table">'.$row["sseat"].'</td>'; 
+            echo '<td class="book-table">';
+            echo "<button class='print-btn' onclick='window.print()'>Print</button>";
+            echo '</td>';
+			echo "</tr>";
+						
+		}
+		?>
               </tbody>
             </table>
           </form>

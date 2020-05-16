@@ -115,7 +115,7 @@ h3 {
   margin-top: 50px;
 }
 .fa:hover {
-  color: #6c757d;
+  color: #4caf50;
 }
 .text {
   text-align: center;
@@ -123,6 +123,7 @@ h3 {
 #footer {
   padding: 7% 15%;
   text-align: center;
+  background: #6c757d;
 }
 
 .social-icon {

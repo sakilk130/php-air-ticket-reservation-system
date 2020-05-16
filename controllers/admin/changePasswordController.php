@@ -11,16 +11,16 @@ header("Location:../../views/Login.php");
 if (isset($_POST['change']))
 {
   $uname=$_SESSION['loggedinuser'];
-
-  $err_cpass="";
-  $cpass="";
-  $err_npass="";
-  $npass="";
-  $err_cfpass="";
-  $cfpass="";
-  $wrong_pass="";
-  $has_err=false;
-  $wrong_cpass="";
+  
+  // $err_cpass="";
+  // $cpass="";
+  // $err_npass="";
+  // $npass="";
+  // $err_cfpass="";
+  // $cfpass="";
+  // $wrong_pass="";
+  // $has_err=false;
+  // $wrong_cpass="";
 
   if (empty($_POST['cpass']))
   {

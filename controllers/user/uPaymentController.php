@@ -5,7 +5,6 @@
  {
  header("Location:../Login.php");
  }
-
 $err_pnum="";
 $pnum="";
 $has_err=false;
@@ -22,7 +21,13 @@ if (isset($_POST['submit']))
   }
   if(!$has_err)
   {
-    header("Location:ubookflight.php");
+    $uname=$_SESSION['loggedinuser'];
+    $A1 = $_POST['A1'];
+    $id=$_POST["id"];
+    $query ="INSERT INTO tickets(uname, flightid, sseat, phonen) VALUES ('$uname', $id, '$A2', '$pnum')";
+    echo $query;
+    execute($query);
+    //header("Location:ubookflight.php");
   }
 }
 ?>

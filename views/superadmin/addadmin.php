@@ -19,6 +19,7 @@ require '../../controllers/superadmin/addadminController.php';
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/superadmin.css" />
+    <script src="valid.js"></script>
   </head>
   <body>
     <?php include "navbar.php"; ?>
@@ -28,7 +29,7 @@ require '../../controllers/superadmin/addadminController.php';
       <div class="split-right">
         <div>
           <div class="login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form action="" class="login-form" method="post">
+            <form action="" name="RegForm" class="login-form" method="post" onsubmit="return validationn()">
               <span class="login-form-title">Add Admin</span>
 
               <input name="fname" class="login-input" type="text" placeholder="First Name" value="<?php echo $fname; ?>"/>

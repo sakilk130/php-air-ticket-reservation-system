@@ -1,6 +1,14 @@
 <?php
 require_once '../../controllers/admin/showBookFlightController.php';
-$tickets=getAllTickets();
+// $tickets=getAllTickets();
+$s="localhost";
+$u="sakil";
+$p="sakil";
+$d="airlinedb";
+$conn=mysqli_connect($s,$u,$p,$d);
+$query="SELECT * FROM tickets";
+$rs=mysqli_query($conn,$query);
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,21 +54,51 @@ $tickets=getAllTickets();
                 </thead>
                 <tbody>
                 <?php
-				foreach($tickets as $ticket)
-				{
-					echo "<tr>";
-						echo '<td class="search-table">'.$ticket["uname"].'</td>';
-						echo '<td class="search-table">'.$ticket["fid"].'</td>';
-						echo '<td class="search-table">'.$ticket["ddate"].'</td>';
-            echo '<td class="search-table">'.$ticket["ttime"].'</td>';
-            echo '<td class="search-table">'.$ticket["ffrom"].'</td>';
-            echo '<td class="search-table">'.$ticket["tto"].'</td>';
-            echo '<td class="search-table">'.$ticket["fare"].'</td>';
-            echo '<td class="search-table">'.$ticket["phone"].'</td>';
-            //echo '<td class="search-table">'.$ticket["fare"].'</td>';
-            //echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
-            echo "</tr>";
-				}
+        while($row=mysqli_fetch_assoc($rs))
+		{
+      echo "<tr>";
+      echo '<td class="search-table">'.$row["uname"].'</td>';
+            $id=$row["flightid"];
+            $ss="localhost";
+            $uu="sakil";
+            $pp="sakil";
+            $dd="airlinedb";
+            $connn=mysqli_connect($ss,$uu,$pp,$dd);
+            $queryy="SELECT * FROM flight WHERE fid=$id";
+            $rss=mysqli_query($connn,$queryy);
+            mysqli_close($conn);
+            while($roww=mysqli_fetch_assoc($rss))
+            {
+						echo '<td class="search-table">'.$roww["flightid"].'</td>';
+            echo '<td class="search-table">'.$roww["ddate"].'</td>';
+            echo '<td class="search-table">'.$roww["ttime"].'</td>';
+            echo '<td class="search-table">'.$roww["ffrom"].'</td>';
+						echo '<td class="search-table">'.$roww["tto"].'</td>';
+						echo '<td class="search-table">'.$roww["fare"].'</td>';
+            
+          }
+            echo '<td class="book-table">'.$row["phonen"].'</td>'; 
+            
+			echo "</tr>";
+						
+		}
+		?>
+                <?php
+				// foreach($tickets as $ticket)
+				// {
+				// 	echo "<tr>";
+				// 		echo '<td class="search-table">'.$ticket["uname"].'</td>';
+				// 		echo '<td class="search-table">'.$ticket["fid"].'</td>';
+				// 		echo '<td class="search-table">'.$ticket["ddate"].'</td>';
+        //     echo '<td class="search-table">'.$ticket["ttime"].'</td>';
+        //     echo '<td class="search-table">'.$ticket["ffrom"].'</td>';
+        //     echo '<td class="search-table">'.$ticket["tto"].'</td>';
+        //     echo '<td class="search-table">'.$ticket["fare"].'</td>';
+        //     echo '<td class="search-table">'.$ticket["phone"].'</td>';
+        //     //echo '<td class="search-table">'.$ticket["fare"].'</td>';
+        //     //echo '<td><a href="remove.php?id='.$flight["fid"].'" class="btn btn-danger">Remove</a></td>';
+        //     echo "</tr>";
+				// }
 			?> 
                 </tbody>
               </table>

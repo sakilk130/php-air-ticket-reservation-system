@@ -249,7 +249,7 @@ $flights = getAllFlights();
         </form>
       </div>
       </section>
-    <footer class="white-section" id="footer">
+    <footer style="background: #6c757d;" class="white-section" id="footer">
       <div class="container-fluid">
       <i class="fa fa-facebook-official"></i>
       <i class="fa fa-instagram"></i>

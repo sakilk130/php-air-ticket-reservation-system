@@ -60,7 +60,7 @@ $flights = getAllFlights($ffrom,$tto,$ddate);
 						echo '<td class="search-table">'.$flight["seat"].'</td>';
             echo '<td class="search-table">'.$flight["fare"].'</td>';
            // echo '<td><a href="editproduct.php?id='.$product["id"].'" class="btn btn-success">Edit</a></td>';
-            echo '<td><a href="uselectticket.php?id='.$flight["fid"].'" class="select-btn">Select</a></td>';
+            echo '<td class="search-table"><a href="uselectticket.php?id='.$flight["fid"].'" class="select-btn">Select</a></td>';
             //echo '<td class="search-table"><input class="select-btn" type="submit" name="select1" value="Select">';
             echo "<br>";
             echo '<span style="color:red">'; 

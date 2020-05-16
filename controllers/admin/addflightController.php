@@ -103,5 +103,6 @@ if(isset($_POST['addFlight']))
         echo "<script>alert('Flight Added !'); location.href='../../views/admin/addFlight.php';</script>";
         //header("Location:../../views/admin/addFlight.php");
     }
+
 }
 ?>
