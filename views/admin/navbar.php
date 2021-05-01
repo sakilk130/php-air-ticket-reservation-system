@@ -8,7 +8,7 @@ require_once '../../controllers/admin/navbarController.php';
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
           <!-- Brand -->
           <span></span>
-          <a class="navbar-brand" href="/Mid-Project/index.php"
+          <a class="navbar-brand" href="../index.php"
             >Bangladesh Airlines</a
           >
 

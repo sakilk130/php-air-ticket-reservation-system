@@ -1,7 +1,7 @@
 <?php
 	 $serverName="localhost";
-	 $userName="sakil";
-	 $password="sakil";
+	 $userName="root";
+	 $password="";
 	 $dbName="airlinedb";
 	function execute($query) //executing non query
 	{
@@ -13,7 +13,6 @@
 		mysqli_query($conn,$query);
 		mysqli_close($conn);
 	}
-
 	function get($query)
 	{
         $data=array();//numeric array
@@ -32,9 +31,7 @@
                 $data[] = $entity;
             }
         }
-
         mysqli_close($conn);
-
 		return $data;
 	}
 	function getU($query)
@@ -48,6 +45,4 @@
 		mysqli_close($conn);
 		return $result;
 	}
-
-	
 ?>

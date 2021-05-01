@@ -8,7 +8,7 @@ require '../../controllers/user/navbarController.php';
       <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
           <!-- Brand -->
-          <a class="navbar-brand" href="/Mid-Project/index.php"
+          <a class="navbar-brand" href="../index.php"
             >Bangladesh Airlines</a
           >
 
